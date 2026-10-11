@@ -1,0 +1,413 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="es"><head><title>Grupos y comunidades · DEMO</title><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover" name="viewport"/><meta content="mobile_tab" name="shell-type"/><link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/><link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/><script src="/tw.js"></script><script id="tailwind-config">
+  tailwind.config = {
+    darkMode: "class",
+    theme: {
+      extend: {
+        "colors": {
+          "secondary": "#4cd7f6",
+          "cyber-cyan": "#06B6D4",
+          "surface-tint": "#d0bcff",
+          "on-error": "#690005",
+          "tertiary-fixed-dim": "#ffb690",
+          "on-primary-fixed-variant": "#5516be",
+          "surface-bright": "#383844",
+          "inverse-surface": "#e2e1f0",
+          "inverse-primary": "#6d3bd7",
+          "vivid-teal": "#14B8A6",
+          "outline": "#958ea0",
+          "surface-container-lowest": "#0c0d17",
+          "secondary-fixed-dim": "#4cd7f6",
+          "on-secondary-fixed": "#001f26",
+          "surface-elevation-1": "#121422",
+          "surface-elevation-3": "#242742",
+          "surface-container-low": "#1a1b25",
+          "electric-purple": "#7C3AED",
+          "on-primary-fixed": "#23005c",
+          "on-tertiary-container": "#4a1c00",
+          "neon-violet": "#8B5CF6",
+          "surface-container-high": "#282934",
+          "tertiary": "#ffb690",
+          "secondary-fixed": "#acedff",
+          "surface-container-highest": "#33343f",
+          "surface-container": "#1e1f2a",
+          "on-background": "#e2e1f0",
+          "on-tertiary-fixed-variant": "#783200",
+          "primary-fixed": "#e9ddff",
+          "on-secondary-container": "#00424e",
+          "on-primary-container": "#340080",
+          "on-surface": "#e2e1f0",
+          "surface": "#12131d",
+          "outline-variant": "#494454",
+          "surface-dim": "#12131d",
+          "primary-fixed-dim": "#d0bcff",
+          "text-primary": "#F8FAFC",
+          "tertiary-container": "#ec6a06",
+          "secondary-container": "#03b5d3",
+          "surface-elevation-2": "#1A1D30",
+          "inverse-on-surface": "#2f303b",
+          "surface-variant": "#33343f",
+          "on-tertiary-fixed": "#341100",
+          "on-secondary": "#003640",
+          "primary": "#d0bcff",
+          "primary-container": "#a078ff",
+          "tertiary-fixed": "#ffdbca",
+          "on-surface-variant": "#cbc3d7",
+          "on-secondary-fixed-variant": "#004e5c",
+          "canvas-base": "#0B0C16",
+          "on-primary": "#3c0091",
+          "on-error-container": "#ffdad6",
+          "error-container": "#93000a",
+          "error": "#ffb4ab",
+          "background": "#12131d",
+          "on-tertiary": "#552100",
+          "amber-warning": "#F59E0B",
+          "text-muted": "#94A3B8",
+          "energetic-coral": "#F43F5E"
+        },
+        "borderRadius": {
+          "DEFAULT": "0.25rem",
+          "lg": "0.5rem",
+          "xl": "0.75rem",
+          "full": "9999px"
+        },
+        "spacing": {
+          "space-sm": "0.5rem",
+          "gutter": "1rem",
+          "space-xl": "1.5rem",
+          "margin": "1rem",
+          "space-lg": "1rem",
+          "margin-sm": "0.75rem",
+          "space-md": "0.75rem",
+          "space-xs": "0.25rem",
+          "gutter-sm": "0.75rem"
+        },
+        "fontFamily": {
+          "headline-lg": ["Inter"],
+          "label-md": ["Inter"],
+          "body-md": ["Inter"],
+          "label-lg": ["Inter"],
+          "body-sm": ["Inter"],
+          "display-lg": ["Inter"],
+          "label-sm": ["Inter"],
+          "headline-md": ["Inter"],
+          "headline-sm": ["Inter"],
+          "body-lg": ["Inter"],
+          "label-technical": ["Inter"],
+          "display-lg-mobile": ["Inter"]
+        },
+        "fontSize": {
+          "headline-lg": ["24px", { "lineHeight": "32px", "letterSpacing": "-0.02em", "fontWeight": "600" }],
+          "label-md": ["12px", { "lineHeight": "16px", "letterSpacing": "0.02em", "fontWeight": "500" }],
+          "body-md": ["14px", { "lineHeight": "20px", "letterSpacing": "-0.005em", "fontWeight": "400" }],
+          "label-lg": ["14px", { "lineHeight": "18px", "letterSpacing": "0.01em", "fontWeight": "600" }],
+          "body-sm": ["12px", { "lineHeight": "18px", "letterSpacing": "0em", "fontWeight": "400" }],
+          "display-lg": ["36px", { "lineHeight": "44px", "letterSpacing": "-0.03em", "fontWeight": "700" }],
+          "label-sm": ["11px", { "lineHeight": "14px", "letterSpacing": "0.03em", "fontWeight": "500" }],
+          "headline-md": ["20px", { "lineHeight": "28px", "letterSpacing": "-0.015em", "fontWeight": "600" }],
+          "headline-sm": ["16px", { "lineHeight": "24px", "letterSpacing": "-0.01em", "fontWeight": "600" }],
+          "body-lg": ["16px", { "lineHeight": "24px", "letterSpacing": "-0.01em", "fontWeight": "400" }],
+          "label-technical": ["10px", { "lineHeight": "14px", "letterSpacing": "0.08em", "fontWeight": "700" }],
+          "display-lg-mobile": ["28px", { "lineHeight": "34px", "letterSpacing": "-0.025em", "fontWeight": "700" }]
+        }
+      }
+    }
+  };
+</script><style>@layer base { html, body { width: 100vw; margin: 0; padding: 0; min-height: 100%; } body { overscroll-behavior-y: none; } .pb-safe { padding-bottom: env(safe-area-inset-bottom, 0px); } .pt-safe { padding-top: env(safe-area-inset-top, 0px); } main > :first-child { margin-top: 0 !important; } main > :last-child { margin-bottom: 0 !important; } } ::-webkit-scrollbar { display: none; }</style><style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+</head><body class="bg-background font-body-md text-on-surface antialiased flex flex-col min-h-screen"><header class="fixed top-0 w-full z-50 pt-safe bg-surface/85 backdrop-blur-xl border-b border-outline-variant/30 shadow-[0_1px_12px_rgba(0,0,0,0.6)]"><div class="h-14 px-gutter flex items-center justify-between"><div class="flex items-center gap-space-sm"><div class="w-8 h-8 rounded-lg bg-gradient-to-tr from-electric-purple to-cyber-cyan flex items-center justify-center font-bold text-white shadow-sm shadow-electric-purple/40">D</div><span class="font-label-technical text-label-technical tracking-wider text-cyber-cyan px-1.5 py-0.5 rounded bg-surface-container-high border border-cyber-cyan/20">DEMO</span></div><div class="flex items-center"><h1 class="font-headline-sm text-headline-sm text-text-primary tracking-tight">Perfil</h1></div><div class="flex items-center gap-space-xs"><button aria-label="Búsqueda rápida" class="w-10 h-10 flex items-center justify-center text-text-muted hover:text-cyber-cyan transition-colors" type="button"><span class="material-symbols-outlined text-[20px]">search</span></button><button aria-label="Mensajes directos" class="w-10 h-10 flex items-center justify-center text-text-muted hover:text-cyber-cyan transition-colors" type="button"><span class="material-symbols-outlined text-[20px]">mail</span></button><div class="pl-space-xs"><img alt="Profile" class="w-8 h-8 rounded-full object-cover ring-1 ring-cyber-cyan/40" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCEcUQ3-NKOsOxLMHzi9NCrsGAD9nfomcOrTN51ez6Yg_o2NAnre9Rt97yUKctV3EunvCbqzgaCl0l1jdZi1EsZ7FRGmuVdcf2UL1yv-LN4lZE8h5Mfy20YKW9bC1hWvqih7_aEaOoyHNYSdx2WPYBpccj2izWrwkqS8IsgPqbwCSLwoTpqGoDPYlLxwP42RVElItLQJmnVXMSNdJATjqoJ5tSHSqMOBMnitkCk5IRTiCmlbatv434"/></div></div></div></header><main class="flex-1 flex flex-col relative w-full pt-14 pb-20 bg-background"><div class="flex flex-col w-full">
+<!-- Interactive Script for Tab and Follow Toggle Micro-delight -->
+<script>
+    function switchSubTab(btn, tabName) {
+      const parent = btn.parentElement;
+      const allButtons = parent.querySelectorAll('button');
+      allButtons.forEach(b => {
+        b.className = 'px-space-md py-1.5 rounded-full font-label-md text-label-md text-text-muted transition-all duration-200';
+      });
+      btn.className = 'px-space-md py-1.5 rounded-full font-label-md text-label-md bg-neon-violet text-text-primary shadow-lg shadow-neon-violet/30 transition-all duration-200';
+    }
+
+    function toggleJoin(btn) {
+      if (btn.dataset.joined === 'true') {
+        btn.dataset.joined = 'false';
+        btn.textContent = 'Unirme';
+        btn.className = 'px-space-md py-1.5 rounded-full font-label-sm text-label-sm font-semibold bg-surface-elevation-2 text-cyber-cyan shadow-sm transition-all active:scale-95';
+      } else {
+        btn.dataset.joined = 'true';
+        btn.textContent = 'Siguiendo';
+        btn.className = 'px-space-md py-1.5 rounded-full font-label-sm text-label-sm font-semibold bg-surface-container-high text-on-surface-variant transition-all active:scale-95';
+      }
+    }
+  </script>
+<!-- Subheader Segmented Pills -->
+<div class="w-full px-gutter pt-space-md pb-space-sm">
+<div class="flex items-center gap-space-xs overflow-x-auto no-scrollbar py-0.5">
+<button class="px-space-md py-1.5 rounded-full font-label-md text-label-md bg-neon-violet text-text-primary shadow-lg shadow-neon-violet/30 transition-all duration-200 shrink-0" onclick="switchSubTab(this, 'mis')">
+        Mis Comunidades
+      </button>
+<button class="px-space-md py-1.5 rounded-full font-label-md text-label-md text-text-muted transition-all duration-200 shrink-0" onclick="switchSubTab(this, 'explorar')">
+        Explorar Comunidades
+      </button>
+<button class="px-space-md py-1.5 rounded-full font-label-md text-label-md text-text-muted transition-all duration-200 shrink-0" onclick="switchSubTab(this, 'eventos')">
+        Eventos P2P
+      </button>
+</div>
+</div>
+<!-- Featured Spotlight Card: Cybernetic Nexus -->
+<div class="px-gutter my-space-sm">
+<div class="relative w-full rounded-xl overflow-hidden shadow-2xl bg-surface-elevation-1">
+<!-- Glow ambient backdrop -->
+<div class="absolute -top-12 -right-12 w-48 h-48 bg-neon-violet/25 rounded-full blur-3xl pointer-events-none"></div>
+<div class="absolute -bottom-10 -left-10 w-44 h-44 bg-cyber-cyan/20 rounded-full blur-3xl pointer-events-none"></div>
+<!-- Banner Imagery -->
+<div class="relative h-44 w-full overflow-hidden">
+<img alt="Cybernetic Nexus banner" class="w-full h-full object-cover transform hover:scale-105 transition-transform duration-700" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDpsgK4aOl4EHstMF4RRzMk9zi3iNV16j8rbj6sQcfeNcckpZ72b20oW-TU6GFsvntUfogJr8kjNmK0e_ZyWISWXk5oEUVmO9XkIn9OcRYgP829bftFOmy5milMcaqgWhzkke6i8HmYa450reiochZa4F3SETb6E7idCQ741HAAcQz6n7f0hM8nT7a6V8GP6fs-Qr-vZfE9cRrK_vvcYM20qJv-oA5bwEI51iJHIKTOQ_hSduShHrQ"/>
+<div class="absolute inset-0 bg-gradient-to-t from-surface-elevation-1 via-surface-elevation-1/60 to-transparent"></div>
+<!-- Top Featured Badge -->
+<div class="absolute top-3 left-3 flex items-center gap-1.5 px-2.5 py-1 rounded-full bg-surface-container-lowest/80 backdrop-blur-md">
+<span class="w-2 h-2 rounded-full bg-cyber-cyan animate-pulse"></span>
+<span class="font-label-technical text-label-technical tracking-wider text-cyber-cyan">NODO DESTACADO</span>
+</div>
+<div class="absolute top-3 right-3 flex items-center gap-1 px-2 py-0.5 rounded-full bg-surface-container-high/80 text-text-primary text-label-sm font-label-sm backdrop-blur-md">
+<span class="material-symbols-outlined text-[14px] text-vivid-teal">bolt</span>
+<span>P2P Activo</span>
+</div>
+</div>
+<!-- Content Body -->
+<div class="p-space-lg relative z-10 flex flex-col gap-space-sm">
+<div>
+<div class="flex items-center gap-space-xs">
+<h2 class="font-headline-md text-headline-md text-text-primary tracking-tight">Cybernetic Nexus</h2>
+<span class="material-symbols-outlined text-cyber-cyan text-[18px]" style="font-variation-settings: 'FILL' 1;">verified</span>
+</div>
+<p class="font-body-sm text-body-sm text-text-muted mt-1 leading-relaxed">
+            Nodo de arquitectura distribuida, redes cinéticas y privacidad descentralizada de alta fidelidad.
+          </p>
+</div>
+<!-- Metrics & Active Indicator -->
+<div class="flex items-center justify-between pt-space-xs">
+<div class="flex items-center gap-space-md">
+<div class="flex items-center gap-1.5 text-text-muted">
+<span class="material-symbols-outlined text-[16px]">groups</span>
+<span class="font-label-md text-label-md text-text-primary font-semibold">14.8k</span>
+<span class="font-label-sm text-label-sm text-text-muted">miembros</span>
+</div>
+<div class="flex items-center gap-1.5 text-text-muted">
+<span class="w-1.5 h-1.5 rounded-full bg-vivid-teal"></span>
+<span class="font-label-md text-label-md text-vivid-teal font-semibold">342</span>
+<span class="font-label-sm text-label-sm text-text-muted">en línea</span>
+</div>
+</div>
+<button class="px-space-lg py-2 rounded-full font-label-md text-label-md font-semibold bg-gradient-to-r from-neon-violet to-cyber-cyan text-text-primary shadow-lg shadow-neon-violet/35 hover:brightness-110 active:scale-95 transition-all" data-joined="false" onclick="toggleJoin(this)">
+            Unirme
+          </button>
+</div>
+</div>
+</div>
+</div>
+<!-- Popular Communities Section -->
+<div class="flex flex-col gap-space-sm px-gutter mt-space-lg">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-neon-violet text-[20px]">hub</span>
+<h3 class="font-headline-sm text-headline-sm text-text-primary">Comunidades Populares</h3>
+</div>
+<button class="font-label-sm text-label-sm text-cyber-cyan hover:underline flex items-center gap-0.5">
+        Ver todas
+        <span class="material-symbols-outlined text-[14px]">arrow_forward</span>
+</button>
+</div>
+<!-- Community Item 1: Minimal & Swiss UI -->
+<div class="p-space-md rounded-xl bg-surface-elevation-1 flex items-center justify-between gap-space-md shadow-md transition-all hover:bg-surface-elevation-2">
+<div class="flex items-center gap-space-md min-w-0">
+<div class="relative w-12 h-12 rounded-xl bg-surface-container-high flex items-center justify-center shrink-0 overflow-hidden shadow-inner">
+<div class="absolute inset-0 bg-gradient-to-br from-cyber-cyan/30 to-surface-elevation-3"></div>
+<span class="material-symbols-outlined text-cyber-cyan text-[24px] relative z-10">grid_view</span>
+</div>
+<div class="flex flex-col min-w-0">
+<div class="flex items-center gap-1.5">
+<h4 class="font-label-lg text-label-lg text-text-primary truncate">Minimal &amp; Swiss UI</h4>
+<span class="px-1.5 py-0.2 rounded font-label-technical text-label-technical bg-cyber-cyan/20 text-cyber-cyan">PRO</span>
+</div>
+<div class="flex items-center gap-space-sm text-text-muted font-body-sm text-body-sm mt-0.5">
+<span>8.2k miembros</span>
+<span>•</span>
+<span class="text-cyber-cyan">#Design</span>
+<span class="text-neon-violet">#Figma</span>
+</div>
+</div>
+</div>
+<button class="shrink-0 px-space-md py-1.5 rounded-full font-label-sm text-label-sm font-semibold bg-surface-container-high text-on-surface-variant transition-all active:scale-95" data-joined="true" onclick="toggleJoin(this)">
+        Siguiendo
+      </button>
+</div>
+<!-- Community Item 2: Zero-Telemetry Core -->
+<div class="p-space-md rounded-xl bg-surface-elevation-1 flex items-center justify-between gap-space-md shadow-md transition-all hover:bg-surface-elevation-2">
+<div class="flex items-center gap-space-md min-w-0">
+<div class="relative w-12 h-12 rounded-xl bg-surface-container-high flex items-center justify-center shrink-0 overflow-hidden shadow-inner">
+<div class="absolute inset-0 bg-gradient-to-br from-vivid-teal/30 to-surface-elevation-3"></div>
+<span class="material-symbols-outlined text-vivid-teal text-[24px] relative z-10">security</span>
+</div>
+<div class="flex flex-col min-w-0">
+<div class="flex items-center gap-1.5">
+<h4 class="font-label-lg text-label-lg text-text-primary truncate">Zero-Telemetry Core</h4>
+<span class="w-2 h-2 rounded-full bg-vivid-teal" title="Activo"></span>
+</div>
+<div class="flex items-center gap-space-sm text-text-muted font-body-sm text-body-sm mt-0.5 truncate">
+<span>12.1k miembros</span>
+<span>•</span>
+<span class="truncate">Criptografía P2P</span>
+</div>
+</div>
+</div>
+<button class="shrink-0 px-space-md py-1.5 rounded-full font-label-sm text-label-sm font-semibold bg-surface-elevation-2 text-cyber-cyan shadow-sm transition-all active:scale-95" data-joined="false" onclick="toggleJoin(this)">
+        Unirme
+      </button>
+</div>
+<!-- Community Item 3: Meme Lab & Glitch Art -->
+<div class="p-space-md rounded-xl bg-surface-elevation-1 flex items-center justify-between gap-space-md shadow-md transition-all hover:bg-surface-elevation-2">
+<div class="flex items-center gap-space-md min-w-0">
+<div class="relative w-12 h-12 rounded-xl bg-surface-container-high flex items-center justify-center shrink-0 overflow-hidden shadow-inner">
+<div class="absolute inset-0 bg-gradient-to-br from-energetic-coral/30 to-electric-purple/40"></div>
+<span class="material-symbols-outlined text-energetic-coral text-[24px] relative z-10">auto_fix_high</span>
+</div>
+<div class="flex flex-col min-w-0">
+<div class="flex items-center gap-1.5">
+<h4 class="font-label-lg text-label-lg text-text-primary truncate">Meme Lab &amp; Glitch Art</h4>
+<span class="px-1.5 py-0.2 rounded font-label-technical text-label-technical bg-energetic-coral/20 text-energetic-coral">HOT</span>
+</div>
+<div class="flex items-center gap-space-sm text-text-muted font-body-sm text-body-sm mt-0.5">
+<span>25.4k miembros</span>
+<span>•</span>
+<span class="text-energetic-coral">#Glitches</span>
+<span class="text-neon-violet">#AI</span>
+</div>
+</div>
+</div>
+<button class="shrink-0 px-space-md py-1.5 rounded-full font-label-sm text-label-sm font-semibold bg-surface-elevation-2 text-cyber-cyan shadow-sm transition-all active:scale-95" data-joined="false" onclick="toggleJoin(this)">
+        Unirme
+      </button>
+</div>
+</div>
+<!-- Live Group Discussions / Debates -->
+<div class="flex flex-col gap-space-sm px-gutter mt-space-lg mb-space-xl">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-energetic-coral text-[20px]">podcasts</span>
+<h3 class="font-headline-sm text-headline-sm text-text-primary">Debates grupales en curso</h3>
+</div>
+<span class="font-label-technical text-label-technical px-2 py-0.5 rounded-full bg-energetic-coral/20 text-energetic-coral animate-pulse">
+        EN DIRECTO
+      </span>
+</div>
+<!-- Active Discussion Card 1 -->
+<div class="p-space-lg rounded-xl bg-surface-elevation-1 flex flex-col gap-space-md shadow-md hover:bg-surface-elevation-2 transition-all">
+<div class="flex items-start justify-between gap-space-sm">
+<div>
+<span class="font-label-technical text-label-technical text-cyber-cyan tracking-wider uppercase">En Cybernetic Nexus</span>
+<h4 class="font-label-lg text-label-lg text-text-primary font-semibold mt-0.5">
+            Soberanía de datos vs. LLMs centralizados
+          </h4>
+</div>
+<div class="flex items-center gap-1 px-2 py-1 rounded bg-surface-container-high text-vivid-teal font-label-technical text-label-technical">
+<span class="material-symbols-outlined text-[14px]">graphic_eq</span>
+<span>AUDIO</span>
+</div>
+</div>
+<!-- Chat Preview Snippet -->
+<div class="p-space-sm rounded-lg bg-surface-container-lowest/70 flex items-center gap-2">
+<span class="font-label-sm text-label-sm text-neon-violet font-semibold shrink-0">@k4i:</span>
+<p class="font-body-sm text-body-sm text-text-muted truncate">
+          «El protocolo mesh reduce la latencia a menos de 12ms sin puente centralizado...»
+        </p>
+</div>
+<!-- Avatar Stack & Action -->
+<div class="flex items-center justify-between pt-1">
+<div class="flex items-center">
+<div class="flex -space-x-2">
+<img class="w-7 h-7 rounded-full object-cover shadow-sm bg-surface-container" data-alt="Cyberpunk female developer avatar with glowing neon hair and augmented eyewear in dark ambient lighting" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCNqb86b6XTOE_1omjEFem9uLfBpRtXScwLNqn3VcE5O2d9QR67lWbiSeddSFbxJzNgBW0GNR7voQiqhr9E_6YtEi-EhqLRnsXNJ6wqSygxVq5O_0TN92mbmY5octl5yY3fscYT5pdgLK2Uxa04KANwp-Lc2gEuwIcNxi_aPgKOVFnQ7DVl3bNX8sXhw0zal__0-8tNW4--Rgq9RTRA3llALHuDKiCOt3MX9zQ056044-F5FgLzaJY"/>
+<img class="w-7 h-7 rounded-full object-cover shadow-sm bg-surface-container" data-alt="Futuristic digital artist male avatar with holographic glasses and sleek tech apparel in purple lighting" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDES238D1VPR3hwgZqeKi92hXgNYrRHk9HSwL2o-gR_gs9MAS8VdzdsBLhi4thujB-HI-v7kyocxzLwAjbmFQQe89sPG2eS-z09UAfrMDMIBluk1j1hlOo0aPEMnsQIg6lHLyxYIr1hHnAvcnsUgjmTheSRQ0fcGy98XtcgV8f6ORhJmmKMQgh1NnxAAWhP3kWuMRycC20fAYkHk0faR1AfQqlxeLMBu8ynE8tkBx3lp3GlPbO_o1Y"/>
+<img class="w-7 h-7 rounded-full object-cover shadow-sm bg-surface-container" data-alt="Minimalist robotic synth portrait avatar with blue circuit glows and polished matte black finish" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAQXLkqPWEYD67M8rNmGvqd4ROSIL_C_jnHqdr1CdM9tmnXbXcY2-NzVUEAE2_8Y9fflKXe2Fw4FMOt6PHtuja2iiVhah2LXnGqR-ePGQv3gfPcdr-iDDjguNiBRGRMnOZqn9JTHmv2ne4KabKrftKMenCvQ7dZkh1W1fVWNmOkvGEZSd9TnViTEs15cIfg7fkZLj5boR4a-VgDU99PTTlmJ3oRVqsHgZqGIM-exqpaBwwqJUu-VeI"/>
+</div>
+<span class="font-label-sm text-label-sm text-text-muted ml-2">+48 oyendo</span>
+</div>
+<button class="flex items-center gap-1.5 px-space-md py-1.5 rounded-full font-label-md text-label-md font-semibold bg-surface-elevation-2 text-cyber-cyan hover:bg-cyber-cyan/10 transition-colors active:scale-95 shadow-sm">
+<span class="material-symbols-outlined text-[16px]">volume_up</span>
+<span>Entrar a la sala</span>
+</button>
+</div>
+</div>
+<!-- Active Discussion Card 2 -->
+<div class="p-space-lg rounded-xl bg-surface-elevation-1 flex flex-col gap-space-md shadow-md hover:bg-surface-elevation-2 transition-all">
+<div class="flex items-start justify-between gap-space-sm">
+<div>
+<span class="font-label-technical text-label-technical text-neon-violet tracking-wider uppercase">En Meme Lab &amp; Glitch</span>
+<h4 class="font-label-lg text-label-lg text-text-primary font-semibold mt-0.5">
+            Render colectivo: Glitch Shader Jam #14
+          </h4>
+</div>
+<div class="flex items-center gap-1 px-2 py-1 rounded bg-surface-container-high text-neon-violet font-label-technical text-label-technical">
+<span class="material-symbols-outlined text-[14px]">forum</span>
+<span>TEXTO</span>
+</div>
+</div>
+<!-- Chat Preview Snippet -->
+<div class="p-space-sm rounded-lg bg-surface-container-lowest/70 flex items-center gap-2">
+<span class="font-label-sm text-label-sm text-cyber-cyan font-semibold shrink-0">@neo_pixel:</span>
+<p class="font-body-sm text-body-sm text-text-muted truncate">
+          «Subí el nuevo nodo de distorsión fractal al repositorio comunitario!»
+        </p>
+</div>
+<!-- Avatar Stack & Action -->
+<div class="flex items-center justify-between pt-1">
+<div class="flex items-center">
+<div class="flex -space-x-2">
+<img class="w-7 h-7 rounded-full object-cover shadow-sm bg-surface-container" data-alt="Abstract aesthetic user avatar with prismatic neon glitch pattern and high contrast tones" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDKPFwacKq-JhdbVfdkQImxiODGpvmqdrBwZn2RhfpHgLGeqiClXKYWujhCRQpIInbp16qdy_PHgTqOpLmC_PN6CuFhQdirNpAutodFnvgwqVJGaUnKUmReEaDBhjGWKDfaNNFtNt-pYc8kpkpQ3a7m3gF-hcKa4e-1hPcIaReQRillufGm73YWSbnPQI7_ZPl-K1onF16pkTAW5SHAVprLCP9SWRIr6jYjkXTwyE6c65FLkgj8ZgY"/>
+<img class="w-7 h-7 rounded-full object-cover shadow-sm bg-surface-container" data-alt="Cryptographic engineer user avatar wearing dark hooded tactical jacket with cyan LED rim lighting" src="https://lh3.googleusercontent.com/aida-public/AB6AXuA2BgcOF9vDEkcw-tCSjv-wHh6nCqFbrs6O-mG4rcQzbE8KrGWEgsQrNWzRV7NbXjp54WJtRrNUZl9PQn_dH31DYNdtzhsyUJco2UwywJi_e3y9Ne1fVjdkMN7cqpfqDjQVeKWzlMf8WhDqeFSZeGTfPV2J02A9L31nylOZTHmgM_-7ujMxhqngdwfo84cPAtbmHcT4bDqi0fUrzwYru1sDcbCEDjhxj_wu7zExjUVeYNKFbeIBAVg"/>
+</div>
+<span class="font-label-sm text-label-sm text-text-muted ml-2">+19 participantes</span>
+</div>
+<button class="flex items-center gap-1.5 px-space-md py-1.5 rounded-full font-label-md text-label-md font-semibold bg-surface-elevation-2 text-neon-violet hover:bg-neon-violet/10 transition-colors active:scale-95 shadow-sm">
+<span class="material-symbols-outlined text-[16px]">chat</span>
+<span>Ver chat en vivo</span>
+</button>
+</div>
+</div>
+</div>
+<!-- Floating Action Button: Crear Grupo / Nodo -->
+<div class="fixed bottom-20 right-4 z-40">
+<button aria-label="Crear Grupo o Nodo" class="flex items-center gap-2 h-13 px-5 py-3 rounded-full bg-gradient-to-tr from-electric-purple to-neon-violet text-text-primary shadow-xl shadow-electric-purple/50 active:scale-95 transition-all group">
+<span class="material-symbols-outlined text-[22px] group-hover:rotate-90 transition-transform duration-300">add</span>
+<span class="font-label-lg text-label-lg tracking-tight font-semibold">Crear Nodo</span>
+</button>
+</div>
+</div></main><nav class="fixed bottom-0 w-full z-50 pb-safe bg-surface/90 backdrop-blur-xl border-t border-outline-variant/30 shadow-[0_-2px_16px_rgba(0,0,0,0.6)]" data-active-classes="text-neon-violet"><div class="flex items-center justify-around h-16 px-gutter"><a class="flex flex-col items-center justify-center w-11 h-11 text-text-muted hover:text-text-primary transition-colors gap-0.5" data-path="inicio" href="#"><span class="material-symbols-outlined text-[22px]">home</span><span class="font-label-technical text-label-technical tracking-tight">Inicio</span></a><a class="flex flex-col items-center justify-center w-11 h-11 text-text-muted hover:text-text-primary transition-colors gap-0.5" data-path="explorar" href="#"><span class="material-symbols-outlined text-[22px]">explore</span><span class="font-label-technical text-label-technical tracking-tight">Explorar</span></a><a class="flex flex-col items-center justify-center w-11 h-11 text-text-muted hover:text-text-primary transition-colors gap-0.5" data-path="grupos" href="#"><span class="material-symbols-outlined text-[22px]">groups</span><span class="font-label-technical text-label-technical tracking-tight">Grupos</span></a><a class="flex flex-col items-center justify-center w-11 h-11 text-text-muted hover:text-text-primary transition-colors gap-0.5" data-path="notificaciones" href="#"><span class="material-symbols-outlined text-[22px]">notifications</span><span class="font-label-technical text-label-technical tracking-tight">Avisos</span></a><a class="flex flex-col items-center justify-center w-11 h-11 text-neon-violet transition-colors gap-0.5" data-path="perfil" href="#"><span class="material-symbols-outlined text-[22px]" style="font-variation-settings: 'FILL' 1;">person</span><span class="font-label-technical text-label-technical tracking-tight font-bold">Perfil</span></a></div></nav><script>
+(function(){
+  var R={inicio:'/',explorar:'/explorar',grupos:'/grupos',notificaciones:'/notificaciones',perfil:'/perfil'};
+  document.querySelectorAll('[data-path]').forEach(function(a){var p=R[a.getAttribute('data-path')];if(p&&a.tagName==='A')a.setAttribute('href',p);});
+  var ICON={settings:'/ajustes',chat:'/mensajes',forum:'/mensajes',mail:'/mensajes',send:null,smart_toy:'/asistente',storefront:'/tienda',workspace_premium:'/suscripcion',language:'/idiomas',translate:'/idiomas',shield:'/ciberseguridad',security:'/ciberseguridad',devices:'/sesiones',lock:'/boveda',campaign:'/promocionar',local_fire_department:'/chat-rachi'};
+  document.addEventListener('click',function(e){
+    var el=e.target.closest('a,button');if(!el||el.closest('#demo-menu'))return;
+    var href=el.getAttribute('href');if(href&&href!=='#'&&href.indexOf('javascript')!==0)return;
+    var ic=el.querySelector('.material-symbols-outlined');var name=ic?ic.textContent.trim():'';
+    var txt=(el.textContent||'').trim().toLowerCase();
+    var go=null;
+    if(/^(aceptar|rechazar|aceptar todo|rechazar todo|entendido)$/.test(txt)){var f=el;while(f&&f!==document.body&&getComputedStyle(f).position!=='fixed')f=f.parentElement;if(f&&f!==document.body){e.preventDefault();f.style.display='none';return;}}
+    if(name==='arrow_back'||name==='arrow_back_ios'||name==='close'||name==='chevron_left'){e.preventDefault();if(history.length>1)history.back();else location.href='/';return;}
+    if(/crear cuenta|reg[ií]strate|unirme/.test(txt)&&location.pathname.indexOf('/registro')!==0)go='/registro';
+    else if(/^(entrar|iniciar sesi[oó]n|ya tengo cuenta|continuar|comenzar|empezar|crear mi cuenta|finalizar)/.test(txt)&&/bienvenida|registro/.test(location.pathname))go='/';
+    else if(name==='add'||name==='edit'||name==='add_circle'||/^publicar$/.test(txt))go=location.pathname==='/publicar'?null:'/publicar';
+    else if(ICON[name])go=ICON[name];
+    if(go&&go!==location.pathname){e.preventDefault();location.href=go;}
+  },true);
+  var b=document.createElement('a');b.id='demo-menu';b.href='/pantallas';b.textContent='☰ Pantallas';
+  b.setAttribute('style','position:fixed;left:0;top:45%;z-index:9999;writing-mode:vertical-rl;transform:rotate(180deg);font:600 11px Inter,system-ui,sans-serif;color:#fff;background:rgba(124,58,237,.8);padding:10px 5px;border-radius:0 8px 8px 0;text-decoration:none;box-shadow:0 4px 14px rgba(0,0,0,.4)');
+  document.body.appendChild(b);
+})();
+</script>
+</body></html>

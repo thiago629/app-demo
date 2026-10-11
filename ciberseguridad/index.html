@@ -1,0 +1,303 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="es"><head><title>Centro de ciberseguridad · DEMO</title><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover" name="viewport"/><meta content="mobile_stack" name="shell-type"/><link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/><link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/><script src="/tw.js"></script><script id="tailwind-config">tailwind.config = { darkMode: "class", theme: { extend: { colors: { "secondary-fixed": "#dfe3ea", "secondary": "#c3c7ce", "surface-container-lowest": "#0e0e10", "tertiary": "#ffffff", "on-background": "#e5e1e4", "secondary-container": "#45494f", "on-secondary-fixed": "#171c21", "on-primary-container": "#636565", "error-container": "#93000a", "primary-container": "#e2e2e2", "on-tertiary-fixed": "#1d1b19", "on-primary-fixed-variant": "#454747", "on-surface-variant": "#c4c7c8", "surface-tint": "#c6c6c7", "tertiary-container": "#e7e1dd", "background": "#131315", "on-tertiary-fixed-variant": "#494643", "on-secondary-fixed-variant": "#43474d", "surface-variant": "#353437", "inverse-primary": "#5d5f5f", "primary": "#ffffff", "surface-container-highest": "#353437", "tertiary-fixed-dim": "#cbc6c1", "surface": "#131315", "outline": "#8e9192", "on-error-container": "#ffdad6", "surface-bright": "#39393b", "surface-container": "#201f21", "on-primary-fixed": "#1a1c1c", "primary-fixed": "#e2e2e2", "secondary-fixed-dim": "#c3c7ce", "error": "#ffb4ab", "primary-fixed-dim": "#c6c6c7", "inverse-surface": "#e5e1e4", "surface-container-low": "#1c1b1d", "on-primary": "#2f3131", "on-secondary": "#2c3136", "on-tertiary-container": "#676460", "on-secondary-container": "#b4b9bf", "tertiary-fixed": "#e7e1dd", "outline-variant": "#444748", "surface-container-high": "#2a2a2c", "on-error": "#690005", "on-surface": "#e5e1e4", "inverse-on-surface": "#313032", "on-tertiary": "#32302d", "surface-dim": "#131315" }, borderRadius: { "DEFAULT": "0.125rem", "lg": "0.25rem", "xl": "0.5rem", "full": "0.75rem" }, spacing: { "space-lg": "1rem", "gutter": "1rem", "space-xs": "0.25rem", "margin-sm": "0.75rem", "space-md": "0.75rem", "margin": "1rem", "space-sm": "0.5rem", "gutter-sm": "0.75rem", "space-xl": "1.5rem" }, fontFamily: { "body-md": ["Inter"], "headline-lg": ["Inter"], "display-lg": ["Inter"], "headline-sm": ["Inter"], "body-lg": ["Inter"], "label-lg": ["Inter"], "label-technical": ["Inter"], "display-lg-mobile": ["Inter"], "body-sm": ["Inter"], "label-md": ["Inter"] }, fontSize: { "body-md": ["14px", { "lineHeight": "20px", "letterSpacing": "-0.005em", "fontWeight": "400" }], "headline-lg": ["24px", { "lineHeight": "30px", "letterSpacing": "-0.02em", "fontWeight": "600" }], "display-lg": ["36px", { "lineHeight": "44px", "letterSpacing": "-0.03em", "fontWeight": "700" }], "headline-sm": ["18px", { "lineHeight": "24px", "letterSpacing": "-0.015em", "fontWeight": "600" }], "body-lg": ["16px", { "lineHeight": "23px", "letterSpacing": "-0.01em", "fontWeight": "400" }], "label-lg": ["14px", { "lineHeight": "18px", "letterSpacing": "0.01em", "fontWeight": "600" }], "label-technical": ["10px", { "lineHeight": "14px", "letterSpacing": "0.08em", "fontWeight": "700" }], "display-lg-mobile": ["28px", { "lineHeight": "34px", "letterSpacing": "-0.025em", "fontWeight": "700" }], "body-sm": ["12px", { "lineHeight": "17px", "letterSpacing": "0em", "fontWeight": "400" }], "label-md": ["12px", { "lineHeight": "16px", "letterSpacing": "0.02em", "fontWeight": "500" }] } } } };</script><style>@layer base { html, body { width: 100vw; margin: 0; padding: 0; min-height: 100%; } body { overscroll-behavior-y: none; } .pb-safe { padding-bottom: env(safe-area-inset-bottom, 0px); } .pt-safe { padding-top: env(safe-area-inset-top, 0px); } main > :first-child { margin-top: 0 !important; } main > :last-child { margin-bottom: 0 !important; } } ::-webkit-scrollbar { display: none; }</style><style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+</head><body class="bg-surface font-body-md text-on-surface antialiased flex flex-col min-h-screen"><header class="fixed top-0 w-full z-50 pt-safe bg-surface/85 backdrop-blur-xl shadow-[0_1px_8px_rgba(0,0,0,0.4)]"><div class="h-14 px-gutter flex items-center justify-between"><div class="flex items-center gap-space-xs"><button aria-label="Volver" class="w-11 h-11 flex items-center justify-center text-secondary hover:text-primary transition-colors" onclick="history.back()" type="button"><span class="material-symbols-outlined text-[20px]">arrow_back</span></button><img alt="DEMO Logo" class="h-8 w-auto object-contain" src="https://lh3.googleusercontent.com/aida/AEtjO1VXvCPDoWW7Fk3KJpKYolSTcVq4PNzpJsVKXiz9KUF6qCbeXRQz8VDfb93uUPmX-MmvyaviJy-KqVaJnrf1HzD-26UZ8mXtFHdj1Qr_sljfkSFdVs7P7ZyM3g0u4Gc_6Gx4VRgI8cIv2T8zbFz6dzC3_IBwAZrjIi6Gn36R_02o8DHqc_hrRs8jL8M_EgENloSihrcCtKKEeKcDNCz4sEuAvMCqhptX9JcY_dDQBW092llJ7DgCaAfttQ"/></div><h1 class="font-headline-sm text-headline-sm text-primary tracking-tight">Detalle De Publicacion</h1><div class="flex items-center gap-space-xs"><button aria-label="Compartir o Más opciones" class="w-11 h-11 flex items-center justify-center text-secondary hover:text-primary transition-colors" type="button"><span class="material-symbols-outlined text-[20px]">more_horiz</span></button><img alt="Profile" class="w-8 h-8 rounded-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCEcUQ3-NKOsOxLMHzi9NCrsGAD9nfomcOrTN51ez6Yg_o2NAnre9Rt97yUKctV3EunvCbqzgaCl0l1jdZi1EsZ7FRGmuVdcf2UL1yv-LN4lZE8h5Mfy20YKW9bC1hWvqih7_aEaOoyHNYSdx2WPYBpccj2izWrwkqS8IsgPqbwCSLwoTpqGoDPYlLxwP42RVElItLQJmnVXMSNdJATjqoJ5tSHSqMOBMnitkCk5IRTiCmlbatv434"/></div></div></header><main class="flex-1 flex flex-col relative w-full pt-14 pb-safe bg-surface"><div class="flex flex-col w-full px-margin pb-space-xl gap-space-lg text-on-surface">
+<!-- Status & Shield Banner -->
+<div class="flex flex-col gap-space-xs mt-space-xs">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-space-xs">
+<span class="flex relative w-2.5 h-2.5">
+<span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-cyber-cyan opacity-75"></span>
+<span class="relative inline-flex rounded-full w-2.5 h-2.5 bg-cyber-cyan"></span>
+</span>
+<span class="font-label-technical text-label-technical uppercase tracking-wider text-cyber-cyan">
+          100% BLINDADO · DEFENSA CUÁNTICA
+        </span>
+</div>
+<div class="bg-surface-elevation-2 px-space-sm py-0.5 rounded-full flex items-center gap-1 shadow-sm">
+<span class="material-symbols-outlined text-[14px] text-vivid-teal" style="font-variation-settings: 'FILL' 1;">verified_user</span>
+<span class="font-label-sm text-label-sm text-text-primary">Cero Fugas</span>
+</div>
+</div>
+<div class="flex items-center justify-between">
+<h2 class="font-headline-md text-headline-md text-text-primary tracking-tight">Escudo de Seguridad Activo</h2>
+<button aria-label="Auditoría" class="w-8 h-8 rounded-full bg-surface-elevation-2 flex items-center justify-center text-neon-violet hover:bg-surface-elevation-3 transition-colors shadow-sm">
+<span class="material-symbols-outlined text-[18px]">history</span>
+</button>
+</div>
+</div>
+<!-- Holographic Shield Visual Core (Hero) -->
+<div class="relative w-full rounded-xl overflow-hidden bg-surface-elevation-1 shadow-xl">
+<div class="relative w-full aspect-[16/10] overflow-hidden">
+<img alt="Escudo holográfico ciberespacial de defensa" class="w-full h-full object-cover object-center scale-[1.02]" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDdzDBiWP6Bz5Oo7w4KhnWzZjNRBB98UPWfA1aLWg5dxByM3rau7c499o5zAyj2p6J-avUlI1IkRXkhIuZ7bHsjV-QEEIzSQgemoVu-6gfS-kpJIcatfjhhf2azDo2dJaK_yUy-0ob0j8HiMTLuuw09Ba3PxsXeupB3LkDjj0V7hsi1mZ5tjZUdS68ixiRvW_TcHMxJ5RxVjaLgIkvNum5GzMUDUpKHvXPweuG51LKOgGBEe7DXF2o"/>
+<!-- Dynamic cyber overlays & gradient scrim -->
+<div class="absolute inset-0 bg-gradient-to-t from-surface-elevation-1 via-canvas-base/40 to-transparent"></div>
+<!-- Top Cyber Tag -->
+<div class="absolute top-space-md left-space-md flex items-center gap-space-xs bg-canvas-base/80 backdrop-blur-md px-space-sm py-1 rounded-full shadow-md">
+<span class="material-symbols-outlined text-[14px] text-neon-violet">shield</span>
+<span class="font-label-technical text-label-technical text-primary-fixed uppercase tracking-wider">PROTOCOLO RATIO 0.0ms</span>
+</div>
+<div class="absolute top-space-md right-space-md bg-energetic-coral/20 backdrop-blur-md px-space-sm py-1 rounded-full flex items-center gap-1 shadow-md">
+<span class="w-1.5 h-1.5 rounded-full bg-energetic-coral animate-pulse"></span>
+<span class="font-label-technical text-label-technical text-energetic-coral uppercase tracking-wider">HONEYPOT ACTIVO</span>
+</div>
+<!-- Bottom Overlaid Status -->
+<div class="absolute bottom-space-md left-space-md right-space-md flex flex-col gap-1">
+<div class="flex items-center gap-1.5 text-cyber-cyan">
+<span class="material-symbols-outlined text-[16px]">lock</span>
+<span class="font-label-technical text-label-technical uppercase tracking-widest text-cyber-cyan">RED DESCENTRALIZADA SEGURA</span>
+</div>
+<p class="font-headline-sm text-headline-sm text-text-primary leading-tight">
+          MATRIZ DE DEFENSA ACTIVA: 0 AMENAZAS PENETRADAS
+        </p>
+</div>
+</div>
+<!-- Live Telemetry Bar -->
+<div class="px-space-md py-space-sm bg-surface-elevation-2 flex items-center justify-between text-text-muted">
+<div class="flex items-center gap-space-xs">
+<span class="material-symbols-outlined text-[16px] text-vivid-teal">radar</span>
+<span class="font-label-sm text-label-sm text-text-muted">Escaneo perimetral continuo</span>
+</div>
+<span class="font-label-technical text-label-technical text-cyber-cyan">LATENCIA: 12ms</span>
+</div>
+</div>
+<!-- Real-time Metrics Bento Strip -->
+<div class="flex flex-col gap-space-sm">
+<div class="flex items-center justify-between px-space-xs">
+<span class="font-label-technical text-label-technical text-text-muted uppercase tracking-wider">TELEMETRÍA DE DEFENSA EN VIVO</span>
+<span class="font-label-technical text-label-technical text-vivid-teal">SINCRONIZADO</span>
+</div>
+<div class="grid grid-cols-1 gap-space-sm">
+<!-- Metric 1: Attacks Blocked -->
+<div class="bg-surface-elevation-1 rounded-xl p-space-md shadow-md flex items-start justify-between">
+<div class="flex gap-space-md items-start">
+<div class="w-10 h-10 rounded-lg bg-surface-elevation-2 flex items-center justify-center text-energetic-coral shadow-inner">
+<span class="material-symbols-outlined text-[22px]">gpp_maybe</span>
+</div>
+<div class="flex flex-col">
+<span class="font-label-sm text-label-sm text-text-muted">Ataques Neutralizados Hoy</span>
+<div class="flex items-baseline gap-space-xs mt-0.5">
+<span class="font-headline-lg text-headline-lg text-text-primary">142</span>
+<span class="font-label-sm text-label-sm text-energetic-coral font-medium">intentos bloqueados</span>
+</div>
+<p class="font-body-sm text-body-sm text-text-muted mt-1">Mitigación activa contra fuerza bruta IP, flooding y sniffing.</p>
+</div>
+</div>
+<span class="font-label-technical text-label-technical text-cyber-cyan bg-surface-elevation-2 px-space-xs py-0.5 rounded">HOY</span>
+</div>
+<!-- Metric 2 & 3 Split Grid -->
+<div class="grid grid-cols-2 gap-space-sm">
+<!-- Metric 2 -->
+<div class="bg-surface-elevation-1 rounded-xl p-space-md shadow-md flex flex-col justify-between gap-space-sm">
+<div class="flex items-center justify-between">
+<div class="w-8 h-8 rounded-lg bg-surface-elevation-2 flex items-center justify-center text-neon-violet">
+<span class="material-symbols-outlined text-[18px]">key</span>
+</div>
+<span class="font-label-technical text-label-technical text-vivid-teal">100%</span>
+</div>
+<div class="flex flex-col">
+<span class="font-label-sm text-label-sm text-text-primary">Integridad Claves</span>
+<span class="font-body-sm text-body-sm text-text-muted mt-0.5">Ed25519 &amp; Ratchet</span>
+</div>
+</div>
+<!-- Metric 3 -->
+<div class="bg-surface-elevation-1 rounded-xl p-space-md shadow-md flex flex-col justify-between gap-space-sm">
+<div class="flex items-center justify-between">
+<div class="w-8 h-8 rounded-lg bg-surface-elevation-2 flex items-center justify-center text-cyber-cyan">
+<span class="material-symbols-outlined text-[18px]">hub</span>
+</div>
+<span class="font-label-technical text-label-technical text-cyber-cyan">P2P SEGURO</span>
+</div>
+<div class="flex flex-col">
+<span class="font-label-sm text-label-sm text-text-primary">Cortafuegos Nodos</span>
+<span class="font-body-sm text-body-sm text-text-muted mt-0.5">Anti-Sybil &amp; Anti-DDoS</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- Anti-Hacker Protection Modules -->
+<div class="flex flex-col gap-space-sm">
+<div class="flex items-center justify-between px-space-xs">
+<h3 class="font-headline-sm text-headline-sm text-text-primary">Módulos de Protección Activa</h3>
+<span class="font-label-technical text-label-technical text-neon-violet">4 / 4 ARMADOS</span>
+</div>
+<div class="flex flex-col gap-space-sm">
+<!-- Module 1 -->
+<div class="bg-surface-elevation-1 rounded-xl p-space-md shadow-md flex items-start gap-space-md">
+<div class="w-9 h-9 rounded-lg bg-surface-elevation-2 flex items-center justify-center text-neon-violet flex-shrink-0">
+<span class="material-symbols-outlined text-[20px]">security</span>
+</div>
+<div class="flex flex-col flex-1 min-w-0 pr-space-xs">
+<div class="flex items-center gap-space-xs">
+<span class="font-label-lg text-label-lg text-text-primary truncate">Escudo Anti-Intrusión</span>
+<span class="font-label-technical text-label-technical px-1.5 py-0.5 rounded bg-surface-elevation-2 text-cyber-cyan">AUTO-BLOCK</span>
+</div>
+<p class="font-body-sm text-body-sm text-text-muted mt-1 leading-snug">
+            Bloqueo instantáneo de IP tras 2 intentos no autorizados y señuelo Honeypot perimetral.
+          </p>
+</div>
+<!-- Toggle button styled -->
+<button aria-checked="true" class="relative inline-flex h-6 w-11 flex-shrink-0 cursor-pointer rounded-full bg-cyber-cyan p-0.5 shadow-sm transition-colors" role="switch" type="button">
+<span class="translate-x-5 pointer-events-none inline-block h-5 w-5 transform rounded-full bg-canvas-base shadow transition duration-200"></span>
+</button>
+</div>
+<!-- Module 2 -->
+<div class="bg-surface-elevation-1 rounded-xl p-space-md shadow-md flex items-start gap-space-md">
+<div class="w-9 h-9 rounded-lg bg-surface-elevation-2 flex items-center justify-center text-cyber-cyan flex-shrink-0">
+<span class="material-symbols-outlined text-[20px]">vpn_lock</span>
+</div>
+<div class="flex flex-col flex-1 min-w-0 pr-space-xs">
+<div class="flex items-center gap-space-xs">
+<span class="font-label-lg text-label-lg text-text-primary truncate">Anti-Phishing &amp; MitM</span>
+<span class="font-label-technical text-label-technical px-1.5 py-0.5 rounded bg-surface-elevation-2 text-vivid-teal">DNSSEC</span>
+</div>
+<p class="font-body-sm text-body-sm text-text-muted mt-1 leading-snug">
+            Aislamiento de certificados falsos y verificación DNS criptográfica descentralizada.
+          </p>
+</div>
+<button aria-checked="true" class="relative inline-flex h-6 w-11 flex-shrink-0 cursor-pointer rounded-full bg-cyber-cyan p-0.5 shadow-sm transition-colors" role="switch" type="button">
+<span class="translate-x-5 pointer-events-none inline-block h-5 w-5 transform rounded-full bg-canvas-base shadow transition duration-200"></span>
+</button>
+</div>
+<!-- Module 3 -->
+<div class="bg-surface-elevation-1 rounded-xl p-space-md shadow-md flex items-start gap-space-md">
+<div class="w-9 h-9 rounded-lg bg-surface-elevation-2 flex items-center justify-center text-amber-warning flex-shrink-0">
+<span class="material-symbols-outlined text-[20px]">lock_clock</span>
+</div>
+<div class="flex flex-col flex-1 min-w-0 pr-space-xs">
+<div class="flex items-center gap-space-xs">
+<span class="font-label-lg text-label-lg text-text-primary truncate">Búnker Criptográfico</span>
+<span class="font-label-technical text-label-technical px-1.5 py-0.5 rounded bg-surface-elevation-2 text-amber-warning">ENCLAVE</span>
+</div>
+<p class="font-body-sm text-body-sm text-text-muted mt-1 leading-snug">
+            Bloqueo estricto de exportación de claves y anulación inmediata de sesiones anómalas.
+          </p>
+</div>
+<button aria-checked="true" class="relative inline-flex h-6 w-11 flex-shrink-0 cursor-pointer rounded-full bg-cyber-cyan p-0.5 shadow-sm transition-colors" role="switch" type="button">
+<span class="translate-x-5 pointer-events-none inline-block h-5 w-5 transform rounded-full bg-canvas-base shadow transition duration-200"></span>
+</button>
+</div>
+<!-- Module 4 -->
+<div class="bg-surface-elevation-1 rounded-xl p-space-md shadow-md flex items-start gap-space-md">
+<div class="w-9 h-9 rounded-lg bg-surface-elevation-2 flex items-center justify-center text-vivid-teal flex-shrink-0">
+<span class="material-symbols-outlined text-[20px]">visibility_off</span>
+</div>
+<div class="flex flex-col flex-1 min-w-0 pr-space-xs">
+<div class="flex items-center gap-space-xs">
+<span class="font-label-lg text-label-lg text-text-primary truncate">Anti-Spyware &amp; Teclado</span>
+<span class="font-label-technical text-label-technical px-1.5 py-0.5 rounded bg-surface-elevation-2 text-vivid-teal">OFUSCADO</span>
+</div>
+<p class="font-body-sm text-body-sm text-text-muted mt-1 leading-snug">
+            Ofuscación de memoria en teclado virtual y blindaje contra capturas de pantalla de bajo nivel.
+          </p>
+</div>
+<button aria-checked="true" class="relative inline-flex h-6 w-11 flex-shrink-0 cursor-pointer rounded-full bg-cyber-cyan p-0.5 shadow-sm transition-colors" role="switch" type="button">
+<span class="translate-x-5 pointer-events-none inline-block h-5 w-5 transform rounded-full bg-canvas-base shadow transition duration-200"></span>
+</button>
+</div>
+</div>
+</div>
+<!-- Tactical Emergency & Diagnostics Actions -->
+<div class="flex flex-col gap-space-sm pt-space-xs">
+<!-- Deep Scan CTA Button -->
+<button class="w-full py-space-md px-space-lg rounded-full bg-gradient-to-r from-neon-violet via-electric-purple to-cyber-cyan text-text-primary font-label-lg text-label-lg flex items-center justify-center gap-space-sm shadow-xl active:scale-[0.98] transition-all relative overflow-hidden group" id="scan-btn" type="button">
+<span class="material-symbols-outlined text-[20px] transition-transform duration-500 group-hover:rotate-180">troubleshoot</span>
+<span>Ejecutar Análisis Profundo de Vulnerabilidades</span>
+</button>
+<!-- Panic / Quarantine Immediate Button -->
+<button class="w-full py-space-md px-space-lg rounded-full bg-surface-elevation-1 hover:bg-surface-elevation-2 text-energetic-coral font-label-lg text-label-lg flex items-center justify-center gap-space-sm shadow-md active:scale-[0.98] transition-all" id="panic-btn" type="button">
+<span class="material-symbols-outlined text-[20px]">fmd_bad</span>
+<span>Activar Modo Cuarentena Inmediata</span>
+</button>
+<!-- Subtle System Note -->
+<div class="flex items-center justify-center gap-1.5 pt-space-xs text-text-muted">
+<span class="material-symbols-outlined text-[13px]">lock_reset</span>
+<span class="font-label-technical text-label-technical uppercase tracking-wider">Cifrado de grado militar activo · DEMO SHIELD CORE</span>
+</div>
+</div>
+</div>
+<script>
+  // Simple micro-interactions for scan & panic buttons
+  const scanBtn = document.getElementById('scan-btn');
+  if (scanBtn) {
+    scanBtn.addEventListener('click', () => {
+      const originalText = scanBtn.innerHTML;
+      scanBtn.innerHTML = `
+        <span class="material-symbols-outlined text-[20px] animate-spin">refresh</span>
+        <span>Escaneando 1,024 Nodos y Claves...</span>
+      `;
+      setTimeout(() => {
+        scanBtn.innerHTML = `
+          <span class="material-symbols-outlined text-[20px] text-vivid-teal">check_circle</span>
+          <span>¡Todo Blindado! 0 Fallos Detectados</span>
+        `;
+        setTimeout(() => {
+          scanBtn.innerHTML = originalText;
+        }, 2500);
+      }, 1500);
+    });
+  }
+
+  const panicBtn = document.getElementById('panic-btn');
+  if (panicBtn) {
+    panicBtn.addEventListener('click', () => {
+      if (confirm('¿Confirmar activación inmediata de Modo Cuarentena? Se desconectarán sesiones secundarias y se congelará el tránsito P2P.')) {
+        panicBtn.classList.remove('text-energetic-coral');
+        panicBtn.classList.add('bg-energetic-coral', 'text-text-primary');
+        panicBtn.innerHTML = `
+          <span class="material-symbols-outlined text-[20px]">lock</span>
+          <span>BÚNKER EN CUARENTENA ACTIVO</span>
+        `;
+      }
+    });
+  }
+</script></main><script>
+(function(){
+  var R={inicio:'/',explorar:'/explorar',grupos:'/grupos',notificaciones:'/notificaciones',perfil:'/perfil'};
+  document.querySelectorAll('[data-path]').forEach(function(a){var p=R[a.getAttribute('data-path')];if(p&&a.tagName==='A')a.setAttribute('href',p);});
+  var ICON={settings:'/ajustes',chat:'/mensajes',forum:'/mensajes',mail:'/mensajes',send:null,smart_toy:'/asistente',storefront:'/tienda',workspace_premium:'/suscripcion',language:'/idiomas',translate:'/idiomas',shield:'/ciberseguridad',security:'/ciberseguridad',devices:'/sesiones',lock:'/boveda',campaign:'/promocionar',local_fire_department:'/chat-rachi'};
+  document.addEventListener('click',function(e){
+    var el=e.target.closest('a,button');if(!el||el.closest('#demo-menu'))return;
+    var href=el.getAttribute('href');if(href&&href!=='#'&&href.indexOf('javascript')!==0)return;
+    var ic=el.querySelector('.material-symbols-outlined');var name=ic?ic.textContent.trim():'';
+    var txt=(el.textContent||'').trim().toLowerCase();
+    var go=null;
+    if(/^(aceptar|rechazar|aceptar todo|rechazar todo|entendido)$/.test(txt)){var f=el;while(f&&f!==document.body&&getComputedStyle(f).position!=='fixed')f=f.parentElement;if(f&&f!==document.body){e.preventDefault();f.style.display='none';return;}}
+    if(name==='arrow_back'||name==='arrow_back_ios'||name==='close'||name==='chevron_left'){e.preventDefault();if(history.length>1)history.back();else location.href='/';return;}
+    if(/crear cuenta|reg[ií]strate|unirme/.test(txt)&&location.pathname.indexOf('/registro')!==0)go='/registro';
+    else if(/^(entrar|iniciar sesi[oó]n|ya tengo cuenta|continuar|comenzar|empezar|crear mi cuenta|finalizar)/.test(txt)&&/bienvenida|registro/.test(location.pathname))go='/';
+    else if(name==='add'||name==='edit'||name==='add_circle'||/^publicar$/.test(txt))go=location.pathname==='/publicar'?null:'/publicar';
+    else if(ICON[name])go=ICON[name];
+    if(go&&go!==location.pathname){e.preventDefault();location.href=go;}
+  },true);
+  var b=document.createElement('a');b.id='demo-menu';b.href='/pantallas';b.textContent='☰ Pantallas';
+  b.setAttribute('style','position:fixed;left:0;top:45%;z-index:9999;writing-mode:vertical-rl;transform:rotate(180deg);font:600 11px Inter,system-ui,sans-serif;color:#fff;background:rgba(124,58,237,.8);padding:10px 5px;border-radius:0 8px 8px 0;text-decoration:none;box-shadow:0 4px 14px rgba(0,0,0,.4)');
+  document.body.appendChild(b);
+})();
+</script>
+</body></html>

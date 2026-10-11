@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="es"><head><title>Registro · DEMO</title><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover" name="viewport"/><meta content="mobile_blank" name="shell-type"/><link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/><link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/><script src="/tw.js"></script><script id="tailwind-config">tailwind.config = { darkMode: "class", theme: { extend: { colors: { "secondary-fixed": "#dfe3ea", "secondary": "#c3c7ce", "surface-container-lowest": "#0e0e10", "tertiary": "#ffffff", "on-background": "#e5e1e4", "secondary-container": "#45494f", "on-secondary-fixed": "#171c21", "on-primary-container": "#636565", "error-container": "#93000a", "primary-container": "#e2e2e2", "on-tertiary-fixed": "#1d1b19", "on-primary-fixed-variant": "#454747", "on-surface-variant": "#c4c7c8", "surface-tint": "#c6c6c7", "tertiary-container": "#e7e1dd", "background": "#131315", "on-tertiary-fixed-variant": "#494643", "on-secondary-fixed-variant": "#43474d", "surface-variant": "#353437", "inverse-primary": "#5d5f5f", "primary": "#ffffff", "surface-container-highest": "#353437", "tertiary-fixed-dim": "#cbc6c1", "surface": "#131315", "outline": "#8e9192", "on-error-container": "#ffdad6", "surface-bright": "#39393b", "surface-container": "#201f21", "on-primary-fixed": "#1a1c1c", "primary-fixed": "#e2e2e2", "secondary-fixed-dim": "#c3c7ce", "error": "#ffb4ab", "primary-fixed-dim": "#c6c6c7", "inverse-surface": "#e5e1e4", "surface-container-low": "#1c1b1d", "on-primary": "#2f3131", "on-secondary": "#2c3136", "on-tertiary-container": "#676460", "on-secondary-container": "#b4b9bf", "tertiary-fixed": "#e7e1dd", "outline-variant": "#444748", "surface-container-high": "#2a2a2c", "on-error": "#690005", "on-surface": "#e5e1e4", "inverse-on-surface": "#313032", "on-tertiary": "#32302d", "surface-dim": "#131315" }, borderRadius: { "DEFAULT": "0.125rem", "lg": "0.25rem", "xl": "0.5rem", "full": "0.75rem" }, spacing: { "space-lg": "1rem", "gutter": "1rem", "space-xs": "0.25rem", "margin-sm": "0.75rem", "space-md": "0.75rem", "margin": "1rem", "space-sm": "0.5rem", "gutter-sm": "0.75rem", "space-xl": "1.5rem" }, fontFamily: { "body-md": ["Inter"], "headline-lg": ["Inter"], "display-lg": ["Inter"], "headline-sm": ["Inter"], "body-lg": ["Inter"], "label-lg": ["Inter"], "label-technical": ["Inter"], "display-lg-mobile": ["Inter"], "body-sm": ["Inter"], "label-md": ["Inter"] }, fontSize: { "body-md": ["14px", { "lineHeight": "20px", "letterSpacing": "-0.005em", "fontWeight": "400" }], "headline-lg": ["24px", { "lineHeight": "30px", "letterSpacing": "-0.02em", "fontWeight": "600" }], "display-lg": ["36px", { "lineHeight": "44px", "letterSpacing": "-0.03em", "fontWeight": "700" }], "headline-sm": ["18px", { "lineHeight": "24px", "letterSpacing": "-0.015em", "fontWeight": "600" }], "body-lg": ["16px", { "lineHeight": "23px", "letterSpacing": "-0.01em", "fontWeight": "400" }], "label-lg": ["14px", { "lineHeight": "18px", "letterSpacing": "0.01em", "fontWeight": "600" }], "label-technical": ["10px", { "lineHeight": "14px", "letterSpacing": "0.08em", "fontWeight": "700" }], "display-lg-mobile": ["28px", { "lineHeight": "34px", "letterSpacing": "-0.025em", "fontWeight": "700" }], "body-sm": ["12px", { "lineHeight": "17px", "letterSpacing": "0em", "fontWeight": "400" }], "label-md": ["12px", { "lineHeight": "16px", "letterSpacing": "0.02em", "fontWeight": "500" }] } } } };</script><style>@layer base { html, body { width: 100vw; margin: 0; padding: 0; min-height: 100%; } body { overscroll-behavior-y: none; } .pb-safe { padding-bottom: env(safe-area-inset-bottom, 0px); } .pt-safe { padding-top: env(safe-area-inset-top, 0px); } main > :first-child { margin-top: 0 !important; } main > :last-child { margin-bottom: 0 !important; } } ::-webkit-scrollbar { display: none; }</style><style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head><body class="bg-surface font-body-md text-on-surface antialiased flex flex-col min-h-screen"><main class="flex-1 flex flex-col relative w-full pt-safe pb-safe bg-surface"><div class="flex flex-col w-full px-gutter pb-space-xl">
+<!-- Top Navigation & Technical Marker -->
+<div class="flex items-center justify-between py-space-md mb-space-sm">
+<button aria-label="Volver atrás" class="flex items-center justify-center w-10 h-10 rounded-full bg-surface-container hover:bg-surface-container-high active:scale-95 transition-all text-secondary" type="button">
+<span class="material-symbols-outlined text-[20px]">arrow_back</span>
+</button>
+<div class="px-2 py-0.5 rounded bg-surface-container-high">
+<span class="font-label-technical text-label-technical tracking-wider text-secondary uppercase">DEMO · APP DE PRUEBA</span>
+</div>
+</div>
+<!-- Editorial Headline Section -->
+<div class="flex flex-col space-y-space-xs mb-space-xl">
+<div class="flex items-center space-x-2">
+<span class="h-1.5 w-1.5 rounded-full bg-primary animate-pulse"></span>
+<span class="font-label-technical text-label-technical uppercase tracking-widest text-secondary">Acceso 02 // Protocolo</span>
+</div>
+<h1 class="font-display-lg-mobile text-display-lg-mobile text-primary tracking-tight">Crea tu cuenta</h1>
+<p class="font-body-md text-body-md text-secondary">Únete a la conversación global en DEMO.</p>
+</div>
+<!-- Registration Form -->
+<form class="flex flex-col space-y-space-lg" id="signup-form" onsubmit="event.preventDefault();">
+<!-- Field 1: Full Name -->
+<div class="flex flex-col space-y-1.5">
+<div class="flex justify-between items-center">
+<label class="font-label-md text-label-md text-secondary" for="fullName">Nombre completo</label>
+<span class="font-label-technical text-label-technical text-outline">REQUERIDO</span>
+</div>
+<div class="relative flex items-center bg-surface-container-low rounded-xl focus-within:bg-surface-container transition-colors">
+<input class="w-full bg-transparent px-space-md py-3 font-body-md text-body-md text-primary placeholder:text-outline focus:outline-none" id="fullName" placeholder="Elena Rostova" required="" type="text"/>
+<span class="material-symbols-outlined text-[18px] text-outline mr-space-md pointer-events-none">badge</span>
+</div>
+</div>
+<!-- Field 2: Username with @ -->
+<div class="flex flex-col space-y-1.5">
+<div class="flex justify-between items-center">
+<label class="font-label-md text-label-md text-secondary" for="username">Nombre de usuario</label>
+<span class="font-label-technical text-label-technical text-outline" id="username-avail">DISPONIBLE</span>
+</div>
+<div class="relative flex items-center bg-surface-container-low rounded-xl focus-within:bg-surface-container transition-colors">
+<span class="pl-space-md pr-1 font-body-md text-body-md text-secondary font-medium select-none">@</span>
+<input class="w-full bg-transparent pr-space-md py-3 font-body-md text-body-md text-primary placeholder:text-outline focus:outline-none" id="username" placeholder="elena_r" required="" type="text"/>
+<span class="material-symbols-outlined text-[18px] text-outline mr-space-md pointer-events-none">alternate_email</span>
+</div>
+</div>
+<!-- Field 3: Email -->
+<div class="flex flex-col space-y-1.5">
+<div class="flex justify-between items-center">
+<label class="font-label-md text-label-md text-secondary" for="email">Correo electrónico</label>
+<span class="font-label-technical text-label-technical text-outline">INSTITUCIONAL O PERSONAL</span>
+</div>
+<div class="relative flex items-center bg-surface-container-low rounded-xl focus-within:bg-surface-container transition-colors">
+<input class="w-full bg-transparent px-space-md py-3 font-body-md text-body-md text-primary placeholder:text-outline focus:outline-none" id="email" placeholder="elena@ejemplo.com" required="" type="email"/>
+<span class="material-symbols-outlined text-[18px] text-outline mr-space-md pointer-events-none">mail</span>
+</div>
+</div>
+<!-- Field 4: Password with Toggle and Strength Meter -->
+<div class="flex flex-col space-y-1.5">
+<div class="flex justify-between items-center">
+<label class="font-label-md text-label-md text-secondary" for="password">Contraseña</label>
+<span class="font-label-technical text-label-technical text-outline" id="pwd-strength-label">SEGURIDAD: MEDIA</span>
+</div>
+<div class="relative flex items-center bg-surface-container-low rounded-xl focus-within:bg-surface-container transition-colors">
+<input class="w-full bg-transparent pl-space-md pr-12 py-3 font-body-md text-body-md text-primary placeholder:text-outline focus:outline-none" id="password" placeholder="Mínimo 8 caracteres" required="" type="password"/>
+<button aria-label="Mostrar contraseña" class="absolute right-0 top-0 bottom-0 px-space-md flex items-center text-outline hover:text-primary transition-colors" id="toggle-pwd-btn" type="button">
+<span class="material-symbols-outlined text-[20px]" id="pwd-icon">visibility</span>
+</button>
+</div>
+<!-- Subtle Strength Bar Multi-segment -->
+<div class="grid grid-cols-4 gap-1.5 pt-1.5">
+<div class="h-1 rounded-full bg-primary transition-all" id="bar-1"></div>
+<div class="h-1 rounded-full bg-surface-container-high transition-all" id="bar-2"></div>
+<div class="h-1 rounded-full bg-surface-container-high transition-all" id="bar-3"></div>
+<div class="h-1 rounded-full bg-surface-container-high transition-all" id="bar-4"></div>
+</div>
+</div>
+<!-- Field 5: Birth Date -->
+<div class="flex flex-col space-y-1.5">
+<div class="flex justify-between items-center">
+<label class="font-label-md text-label-md text-secondary" for="birthDate">Fecha de nacimiento</label>
+<span class="font-label-technical text-label-technical text-outline">VERIFICACIÓN</span>
+</div>
+<div class="relative flex items-center bg-surface-container-low rounded-xl focus-within:bg-surface-container transition-colors">
+<input class="w-full bg-transparent px-space-md py-3 font-body-md text-body-md text-primary focus:outline-none [color-scheme:dark]" id="birthDate" required="" type="date"/>
+<span class="material-symbols-outlined text-[18px] text-outline mr-space-md pointer-events-none">calendar_today</span>
+</div>
+<!-- Explicit Validation Requirement Notice -->
+<div class="flex items-start space-x-1.5 pt-1 px-1">
+<span class="material-symbols-outlined text-[16px] text-secondary mt-0.5">info</span>
+<p class="font-body-sm text-body-sm text-secondary">
+          Debes tener al menos 16 años para registrarte en DEMO.
+        </p>
+</div>
+</div>
+<!-- Legal Checkboxes: Strictly Unchecked by Default -->
+<div class="flex flex-col space-y-space-md pt-2">
+<!-- Checkbox 1: Terms -->
+<label class="group flex items-start space-x-3 cursor-pointer select-none">
+<div class="relative mt-0.5 flex items-center justify-center">
+<input class="peer sr-only" id="terms-check" type="checkbox"/>
+<div class="w-5 h-5 rounded bg-surface-container-high peer-checked:bg-primary transition-all flex items-center justify-center">
+<span class="material-symbols-outlined text-[14px] text-on-primary opacity-0 peer-checked:opacity-100 font-bold transition-opacity">check</span>
+</div>
+</div>
+<span class="font-body-sm text-body-sm text-secondary group-hover:text-primary transition-colors leading-snug">
+          Acepto los <a class="text-primary underline underline-offset-4 decoration-outline hover:decoration-primary" href="#">Términos y Condiciones</a> de uso de DEMO.
+        </span>
+</label>
+<!-- Checkbox 2: Privacy Policy -->
+<label class="group flex items-start space-x-3 cursor-pointer select-none">
+<div class="relative mt-0.5 flex items-center justify-center">
+<input class="peer sr-only" id="privacy-check" type="checkbox"/>
+<div class="w-5 h-5 rounded bg-surface-container-high peer-checked:bg-primary transition-all flex items-center justify-center">
+<span class="material-symbols-outlined text-[14px] text-on-primary opacity-0 peer-checked:opacity-100 font-bold transition-opacity">check</span>
+</div>
+</div>
+<span class="font-body-sm text-body-sm text-secondary group-hover:text-primary transition-colors leading-snug">
+          He leído y acepto la <a class="text-primary underline underline-offset-4 decoration-outline hover:decoration-primary" href="#">Política de Privacidad</a> y el tratamiento de datos personales.
+        </span>
+</label>
+</div>
+<!-- Primary Action Button: "Continuar" -->
+<div class="pt-space-md">
+<button class="w-full flex items-center justify-center space-x-2 py-3.5 px-6 rounded-full font-label-lg text-label-lg bg-surface-container-high text-outline cursor-not-allowed transition-all duration-200 active:scale-[0.98]" disabled="" id="submit-btn" type="submit">
+<span>Continuar</span>
+<span class="material-symbols-outlined text-[18px]">arrow_forward</span>
+</button>
+</div>
+</form>
+<!-- Persistent Editorial Sign-in Link Footer -->
+<div class="flex items-center justify-center space-x-2 py-space-xl">
+<span class="font-body-md text-body-md text-secondary">¿Ya tienes cuenta?</span>
+<a class="font-label-lg text-label-lg text-primary underline underline-offset-4 decoration-secondary hover:text-tertiary transition-colors" href="#">
+      Iniciar sesión
+    </a>
+</div>
+</div>
+<script>
+  (function() {
+    const pwdInput = document.getElementById('password');
+    const toggleBtn = document.getElementById('toggle-pwd-btn');
+    const pwdIcon = document.getElementById('pwd-icon');
+    const bar1 = document.getElementById('bar-1');
+    const bar2 = document.getElementById('bar-2');
+    const bar3 = document.getElementById('bar-3');
+    const bar4 = document.getElementById('bar-4');
+    const strengthLabel = document.getElementById('pwd-strength-label');
+    const termsCheck = document.getElementById('terms-check');
+    const privacyCheck = document.getElementById('privacy-check');
+    const submitBtn = document.getElementById('submit-btn');
+
+    // Password visibility toggle
+    if (toggleBtn && pwdInput && pwdIcon) {
+      toggleBtn.addEventListener('click', () => {
+        const isPassword = pwdInput.type === 'password';
+        pwdInput.type = isPassword ? 'text' : 'password';
+        pwdIcon.textContent = isPassword ? 'visibility_off' : 'visibility';
+      });
+    }
+
+    // Dynamic password meter
+    if (pwdInput) {
+      pwdInput.addEventListener('input', (e) => {
+        const len = e.target.value.length;
+        const bars = [bar1, bar2, bar3, bar4];
+
+        bars.forEach(b => {
+          b.className = 'h-1 rounded-full bg-surface-container-high transition-all';
+        });
+
+        if (len === 0) {
+          strengthLabel.textContent = 'SEGURIDAD: --';
+        } else if (len < 6) {
+          bar1.className = 'h-1 rounded-full bg-error transition-all';
+          strengthLabel.textContent = 'SEGURIDAD: DÉBIL';
+        } else if (len < 10) {
+          bar1.className = 'h-1 rounded-full bg-secondary transition-all';
+          bar2.className = 'h-1 rounded-full bg-secondary transition-all';
+          strengthLabel.textContent = 'SEGURIDAD: MEDIA';
+        } else {
+          bars.forEach(b => {
+            b.className = 'h-1 rounded-full bg-primary transition-all';
+          });
+          strengthLabel.textContent = 'SEGURIDAD: ALTA';
+        }
+        checkFormValidity();
+      });
+    }
+
+    // Agreement and form validity evaluation
+    function checkFormValidity() {
+      const isAgreed = termsCheck && privacyCheck && termsCheck.checked && privacyCheck.checked;
+      const hasInputs = pwdInput && pwdInput.value.length >= 6;
+
+      if (submitBtn) {
+        if (isAgreed && hasInputs) {
+          submitBtn.disabled = false;
+          submitBtn.className = 'w-full flex items-center justify-center space-x-2 py-3.5 px-6 rounded-full font-label-lg text-label-lg bg-primary text-on-primary hover:opacity-95 shadow-lg active:scale-[0.98] transition-all cursor-pointer';
+        } else {
+          submitBtn.disabled = true;
+          submitBtn.className = 'w-full flex items-center justify-center space-x-2 py-3.5 px-6 rounded-full font-label-lg text-label-lg bg-surface-container-high text-outline cursor-not-allowed transition-all duration-200 active:scale-[0.98]';
+        }
+      }
+    }
+
+    if (termsCheck) termsCheck.addEventListener('change', checkFormValidity);
+    if (privacyCheck) privacyCheck.addEventListener('change', checkFormValidity);
+  })();
+</script></main><script>
+(function(){
+  var R={inicio:'/',explorar:'/explorar',grupos:'/grupos',notificaciones:'/notificaciones',perfil:'/perfil'};
+  document.querySelectorAll('[data-path]').forEach(function(a){var p=R[a.getAttribute('data-path')];if(p&&a.tagName==='A')a.setAttribute('href',p);});
+  var ICON={settings:'/ajustes',chat:'/mensajes',forum:'/mensajes',mail:'/mensajes',send:null,smart_toy:'/asistente',storefront:'/tienda',workspace_premium:'/suscripcion',language:'/idiomas',translate:'/idiomas',shield:'/ciberseguridad',security:'/ciberseguridad',devices:'/sesiones',lock:'/boveda',campaign:'/promocionar',local_fire_department:'/chat-rachi'};
+  document.addEventListener('click',function(e){
+    var el=e.target.closest('a,button');if(!el||el.closest('#demo-menu'))return;
+    var href=el.getAttribute('href');if(href&&href!=='#'&&href.indexOf('javascript')!==0)return;
+    var ic=el.querySelector('.material-symbols-outlined');var name=ic?ic.textContent.trim():'';
+    var txt=(el.textContent||'').trim().toLowerCase();
+    var go=null;
+    if(/^(aceptar|rechazar|aceptar todo|rechazar todo|entendido)$/.test(txt)){var f=el;while(f&&f!==document.body&&getComputedStyle(f).position!=='fixed')f=f.parentElement;if(f&&f!==document.body){e.preventDefault();f.style.display='none';return;}}
+    if(name==='arrow_back'||name==='arrow_back_ios'||name==='close'||name==='chevron_left'){e.preventDefault();if(history.length>1)history.back();else location.href='/';return;}
+    if(/crear cuenta|reg[ií]strate|unirme/.test(txt)&&location.pathname.indexOf('/registro')!==0)go='/registro';
+    else if(/^(entrar|iniciar sesi[oó]n|ya tengo cuenta|continuar|comenzar|empezar|crear mi cuenta|finalizar)/.test(txt)&&/bienvenida|registro/.test(location.pathname))go='/';
+    else if(name==='add'||name==='edit'||name==='add_circle'||/^publicar$/.test(txt))go=location.pathname==='/publicar'?null:'/publicar';
+    else if(ICON[name])go=ICON[name];
+    if(go&&go!==location.pathname){e.preventDefault();location.href=go;}
+  },true);
+  var b=document.createElement('a');b.id='demo-menu';b.href='/pantallas';b.textContent='☰ Pantallas';
+  b.setAttribute('style','position:fixed;left:0;top:45%;z-index:9999;writing-mode:vertical-rl;transform:rotate(180deg);font:600 11px Inter,system-ui,sans-serif;color:#fff;background:rgba(124,58,237,.8);padding:10px 5px;border-radius:0 8px 8px 0;text-decoration:none;box-shadow:0 4px 14px rgba(0,0,0,.4)');
+  document.body.appendChild(b);
+})();
+</script>
+</body></html>

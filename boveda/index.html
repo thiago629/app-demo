@@ -1,0 +1,311 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="es"><head><title>Bóveda de mensajes cifrados · DEMO</title><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover" name="viewport"/><meta content="mobile_stack" name="shell-type"/><link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet"/><link href="https://fonts.googleapis.com" rel="preconnect"/><link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/><link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/><style>@layer base{html,body{width:100%;margin:0;padding:0;min-height:100vh;}body{overscroll-behavior-y:none;-webkit-tap-highlight-color:transparent;}.pb-safe{padding-bottom:env(safe-area-inset-bottom,0px);}.pt-safe{padding-top:env(safe-area-inset-top,0px);}main>:first-child{margin-top:0!important;}main>:last-child{margin-bottom:0!important;}}::-webkit-scrollbar{display:none;}</style><script src="/tw.js"></script><script id="tailwind-config">tailwind.config = { darkMode: "class", theme: { extend: { colors: { "surface-container-low": "#1a1b25", "on-surface": "#e2e1f0", "secondary-fixed-dim": "#4cd7f6", "on-tertiary-fixed": "#341100", "surface-elevation-3": "#242742", "surface-container-high": "#282934", "on-error-container": "#ffdad6", "secondary": "#4cd7f6", "tertiary-fixed-dim": "#ffb690", "text-muted": "#94A3B8", "surface-bright": "#383844", "primary-fixed": "#e9ddff", "primary-fixed-dim": "#d0bcff", "surface-variant": "#33343f", "tertiary-container": "#ec6a06", "error": "#ffb4ab", "surface-elevation-1": "#121422", "on-tertiary-container": "#4a1c00", "canvas-base": "#0B0C16", "surface-dim": "#12131d", "on-secondary-fixed": "#001f26", "on-secondary": "#003640", "primary": "#d0bcff", "tertiary": "#ffb690", "vivid-teal": "#14B8A6", "secondary-fixed": "#acedff", "surface-container": "#1e1f2a", "secondary-container": "#03b5d3", "on-primary-fixed-variant": "#5516be", "surface-elevation-2": "#1A1D30", "on-tertiary-fixed-variant": "#783200", "inverse-on-surface": "#2f303b", "surface": "#12131d", "amber-warning": "#F59E0B", "text-primary": "#F8FAFC", "outline": "#958ea0", "surface-tint": "#d0bcff", "neon-violet": "#8B5CF6", "on-error": "#690005", "on-tertiary": "#552100", "energetic-coral": "#F43F5E", "on-primary-fixed": "#23005c", "on-primary": "#3c0091", "outline-variant": "#494454", "electric-purple": "#7C3AED", "error-container": "#93000a", "surface-container-highest": "#33343f", "surface-container-lowest": "#0c0d17", "on-primary-container": "#340080", "cyber-cyan": "#06B6D4", "on-secondary-fixed-variant": "#004e5c", "background": "#12131d", "tertiary-fixed": "#ffdbca", "inverse-primary": "#6d3bd7", "on-secondary-container": "#00424e", "on-surface-variant": "#cbc3d7", "primary-container": "#a078ff", "inverse-surface": "#e2e1f0", "on-background": "#e2e1f0" }, borderRadius: { "DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px" }, spacing: { "margin": "1rem", "margin-sm": "0.75rem", "space-md": "0.75rem", "space-xl": "1.5rem", "space-sm": "0.5rem", "gutter-sm": "0.75rem", "space-lg": "1rem", "space-xs": "0.25rem", "gutter": "1rem" }, fontFamily: { "body-lg": ["Inter"], "headline-md": ["Inter"], "label-technical": ["Inter"], "body-md": ["Inter"], "headline-sm": ["Inter"], "label-lg": ["Inter"], "label-md": ["Inter"], "display-lg": ["Inter"], "headline-lg": ["Inter"], "display-lg-mobile": ["Inter"], "label-sm": ["Inter"], "body-sm": ["Inter"] }, fontSize: { "body-lg": ["16px", { "lineHeight": "24px", "letterSpacing": "-0.01em", "fontWeight": "400" }], "headline-md": ["20px", { "lineHeight": "28px", "letterSpacing": "-0.015em", "fontWeight": "600" }], "label-technical": ["10px", { "lineHeight": "14px", "letterSpacing": "0.08em", "fontWeight": "700" }], "body-md": ["14px", { "lineHeight": "20px", "letterSpacing": "-0.005em", "fontWeight": "400" }], "headline-sm": ["16px", { "lineHeight": "24px", "letterSpacing": "-0.01em", "fontWeight": "600" }], "label-lg": ["14px", { "lineHeight": "18px", "letterSpacing": "0.01em", "fontWeight": "600" }], "label-md": ["12px", { "lineHeight": "16px", "letterSpacing": "0.02em", "fontWeight": "500" }], "display-lg": ["36px", { "lineHeight": "44px", "letterSpacing": "-0.03em", "fontWeight": "700" }], "headline-lg": ["24px", { "lineHeight": "32px", "letterSpacing": "-0.02em", "fontWeight": "600" }], "display-lg-mobile": ["28px", { "lineHeight": "34px", "letterSpacing": "-0.025em", "fontWeight": "700" }], "label-sm": ["11px", { "lineHeight": "14px", "letterSpacing": "0.03em", "fontWeight": "500" }], "body-sm": ["12px", { "lineHeight": "18px", "letterSpacing": "0em", "fontWeight": "400" }] } } } };</script></head><body class="bg-surface text-on-surface font-body-md text-body-md min-h-screen flex flex-col antialiased selection:bg-neon-violet selection:text-text-primary"><header class="fixed top-0 w-full z-50 pt-safe bg-canvas-base/80 backdrop-blur-xl shadow-[0_1px_8px_rgba(0,0,0,0.4)]"><div class="h-16 px-space-md flex items-center justify-between gap-space-sm"><div class="flex items-center gap-space-xs min-w-0 flex-1"><button aria-label="Volver" class="w-11 h-11 flex items-center justify-center text-text-muted hover:text-cyber-cyan transition-colors shrink-0" onclick="history.back()"><span class="material-symbols-outlined text-[22px]">arrow_back</span></button><div class="flex flex-col min-w-0 pr-space-xs"><span class="font-label-technical text-label-technical tracking-widest uppercase text-cyber-cyan truncate">P2P SECURE LAYER</span><h1 class="font-headline-sm text-headline-sm text-text-primary truncate tracking-tight">Bóveda De Mensajes Cifrados P2P</h1></div></div><div class="flex items-center gap-space-xs shrink-0"><button aria-label="Acciones de seguridad" class="w-11 h-11 flex items-center justify-center text-text-muted hover:text-neon-violet transition-colors"><span class="material-symbols-outlined text-[20px]">shield</span></button><button aria-label="Perfil" class="w-11 h-11 flex items-center justify-center"><div class="w-8 h-8 rounded-full bg-primary flex items-center justify-center"><span class="material-symbols-outlined text-on-primary text-[18px]">person</span></div></button></div></div></header><main class="flex-1 flex flex-col relative w-full pt-16 pb-safe bg-surface px-space-lg"><div class="flex flex-col w-full pb-8 space-y-4">
+<!-- Status Chip Bar -->
+<div class="flex items-center gap-space-xs overflow-x-auto no-scrollbar py-0.5">
+<div class="flex items-center gap-1.5 px-2.5 py-1 rounded bg-surface-container-high text-neon-violet">
+<span class="w-1.5 h-1.5 rounded-full bg-neon-violet animate-pulse"></span>
+<span class="font-label-technical text-label-technical uppercase tracking-wider">DOUBLE RATCHET ACTIVO</span>
+</div>
+<div class="flex items-center gap-1.5 px-2.5 py-1 rounded bg-surface-container-high text-cyber-cyan">
+<span class="material-symbols-outlined text-[13px]">bolt</span>
+<span class="font-label-technical text-label-technical uppercase tracking-wider">ZERO-TRACE RAM</span>
+</div>
+<div class="flex items-center gap-1.5 px-2.5 py-1 rounded bg-surface-container-high text-vivid-teal">
+<span class="material-symbols-outlined text-[13px]">hub</span>
+<span class="font-label-technical text-label-technical uppercase tracking-wider">PEER DIRECTO</span>
+</div>
+</div>
+<!-- Featured Card with Provided Secure Vault Image -->
+<div class="relative overflow-hidden rounded-xl bg-surface-container-low shadow-xl">
+<div class="relative w-full h-44 overflow-hidden">
+<img alt="Bóveda Criptográfica P2P Segura" class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAaGL_0DcYTiUIpyLCCBUB4CfmG4AfTJsspDtOS0Il0KwoiV_n_bjyLF-V0BCCwMUWAWVwFz-ELtkxCFb58gyQIr_vkmsDMJylCS-_0hmRQfx3kWVanuFvyM7UU5vK5lUa8b7TIDHrqzPpgdguVHQR_RdkJrolRmzLu49If_ROJvD15KEk3_SOJFegiEMGHkICjnojQcJyz8JvGmMhPeHdEA3KfJgw0yvKdIty83rfklXRD-WWXLhw"/>
+<div class="absolute inset-0 bg-gradient-to-t from-surface-container-low via-surface-container-low/60 to-transparent"></div>
+<div class="absolute top-3 right-3 flex items-center gap-1 px-2 py-0.5 rounded-full bg-canvas-base/80 backdrop-blur-md text-cyber-cyan shadow-sm">
+<span class="material-symbols-outlined text-[14px]">lock</span>
+<span class="font-label-technical text-label-technical">E2EE SEED HARDWARE</span>
+</div>
+<div class="absolute bottom-3 left-3 right-3">
+<div class="inline-flex items-center gap-1 px-1.5 py-0.5 rounded bg-neon-violet/20 text-neon-violet mb-1">
+<span class="material-symbols-outlined text-[12px]">verified_user</span>
+<span class="font-label-technical text-label-technical uppercase">Sin Servidor Central</span>
+</div>
+<h2 class="font-headline-sm text-headline-sm text-text-primary tracking-tight">
+          Bóveda Criptográfica P2P
+        </h2>
+</div>
+</div>
+<div class="p-3.5 space-y-3">
+<p class="font-body-sm text-body-sm text-text-muted leading-relaxed">
+        Tus conversaciones directas no tocan ningún servidor intermedio. Claves de sesión autogeneradas en enclave seguro y borrado irreversible de huella en RAM al cerrar sesión.
+      </p>
+<div class="grid grid-cols-3 gap-2 pt-1">
+<div class="flex flex-col items-center justify-center p-2 rounded-lg bg-surface-elevation-1 text-center">
+<span class="font-label-technical text-label-technical text-neon-violet uppercase tracking-widest">CIFRADO</span>
+<span class="font-headline-sm text-headline-sm text-text-primary mt-0.5">XChaCha20</span>
+<span class="font-label-sm text-label-sm text-text-muted">Post-Quantum</span>
+</div>
+<div class="flex flex-col items-center justify-center p-2 rounded-lg bg-surface-elevation-1 text-center">
+<span class="font-label-technical text-label-technical text-cyber-cyan uppercase tracking-widest">PARES</span>
+<span class="font-headline-sm text-headline-sm text-text-primary mt-0.5">Mesh Direct</span>
+<span class="font-label-sm text-label-sm text-text-muted">No IP leak</span>
+</div>
+<div class="flex flex-col items-center justify-center p-2 rounded-lg bg-surface-elevation-1 text-center">
+<span class="font-label-technical text-label-technical text-energetic-coral uppercase tracking-widest">LOGS</span>
+<span class="font-headline-sm text-headline-sm text-energetic-coral mt-0.5">0.00%</span>
+<span class="font-label-sm text-label-sm text-text-muted">Cero huella</span>
+</div>
+</div>
+</div>
+</div>
+<!-- Quick Filter Tabs -->
+<div class="flex items-center gap-2 overflow-x-auto no-scrollbar pt-1">
+<button class="px-3.5 py-1.5 rounded-full bg-gradient-to-r from-neon-violet/30 to-cyber-cyan/30 text-text-primary shadow-sm flex items-center gap-1.5 shrink-0">
+<span class="w-1.5 h-1.5 rounded-full bg-cyber-cyan"></span>
+<span class="font-label-md text-label-md">Todos (4)</span>
+</button>
+<button class="px-3.5 py-1.5 rounded-full bg-surface-elevation-1 text-text-muted hover:text-text-primary transition-colors flex items-center gap-1 shrink-0">
+<span class="material-symbols-outlined text-[14px] text-amber-warning">timer</span>
+<span class="font-label-md text-label-md">Efímeros (2)</span>
+</button>
+<button class="px-3.5 py-1.5 rounded-full bg-surface-elevation-1 text-text-muted hover:text-text-primary transition-colors flex items-center gap-1 shrink-0">
+<span class="material-symbols-outlined text-[14px] text-neon-violet">shield_lock</span>
+<span class="font-label-md text-label-md">Búnker Secreto</span>
+</button>
+<button class="px-3.5 py-1.5 rounded-full bg-surface-elevation-1 text-text-muted hover:text-text-primary transition-colors flex items-center gap-1 shrink-0">
+<span class="material-symbols-outlined text-[14px] text-secondary">vpn_key</span>
+<span class="font-label-md text-label-md">Solicitudes Clave</span>
+</button>
+</div>
+<!-- Encrypted Conversations List -->
+<div class="space-y-2">
+<div class="flex items-center justify-between px-1">
+<span class="font-label-technical text-label-technical uppercase tracking-widest text-text-muted">CANALES ESTABLECIDOS · TLS/P2P</span>
+<button class="flex items-center gap-1 font-label-sm text-label-sm text-cyber-cyan hover:underline">
+<span class="material-symbols-outlined text-[14px]">tune</span>
+<span>Re-encriptar</span>
+</button>
+</div>
+<!-- Chat Item 1: Marcos Silva -->
+<div class="p-3 rounded-xl bg-surface-elevation-1 hover:bg-surface-elevation-2 transition-all space-y-2 shadow-sm">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-2.5 min-w-0">
+<div class="relative shrink-0">
+<div class="w-10 h-10 rounded-full bg-surface-container-high flex items-center justify-center font-headline-sm text-headline-sm text-cyber-cyan">
+              M
+            </div>
+<span class="absolute bottom-0 right-0 w-2.5 h-2.5 rounded-full bg-vivid-teal ring-2 ring-surface-elevation-1"></span>
+</div>
+<div class="min-w-0">
+<div class="flex items-center gap-1.5">
+<span class="font-headline-sm text-headline-sm text-text-primary truncate">Marcos Silva</span>
+<span class="material-symbols-outlined text-cyber-cyan text-[16px]" title="Verificado P2P">verified</span>
+</div>
+<span class="font-label-sm text-label-sm text-text-muted truncate">@marcos_dev · <span class="text-vivid-teal">En línea</span> · Ed25519</span>
+</div>
+</div>
+<div class="flex flex-col items-end shrink-0 pl-2">
+<span class="px-2 py-0.5 rounded bg-energetic-coral/15 text-energetic-coral font-label-technical text-label-technical flex items-center gap-1">
+<span class="material-symbols-outlined text-[11px]">timer</span>
+            12m
+          </span>
+<span class="font-label-sm text-label-sm text-text-muted mt-1">14:38</span>
+</div>
+</div>
+<p class="font-body-sm text-body-sm text-text-primary line-clamp-1 pl-12">
+        Protocolo de nodo sincronizado. Claves rotadas con éxito.
+      </p>
+</div>
+<!-- Chat Item 2: Sofía Vane -->
+<div class="p-3 rounded-xl bg-surface-elevation-1 hover:bg-surface-elevation-2 transition-all space-y-2 shadow-sm">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-2.5 min-w-0">
+<div class="relative shrink-0">
+<div class="w-10 h-10 rounded-full bg-surface-container-high flex items-center justify-center font-headline-sm text-headline-sm text-neon-violet">
+              S
+            </div>
+<span class="absolute bottom-0 right-0 w-2.5 h-2.5 rounded-full bg-neon-violet ring-2 ring-surface-elevation-1"></span>
+</div>
+<div class="min-w-0">
+<div class="flex items-center gap-1.5">
+<span class="font-headline-sm text-headline-sm text-text-primary truncate">Sofía Vane</span>
+<span class="material-symbols-outlined text-neon-violet text-[16px]">lock</span>
+</div>
+<span class="font-label-sm text-label-sm text-text-muted truncate">@sofia_vane · Sesión Segura</span>
+</div>
+</div>
+<div class="flex items-center gap-2 shrink-0 pl-2">
+<div class="w-5 h-5 rounded-full bg-neon-violet flex items-center justify-center text-text-primary font-label-technical text-label-technical">
+            1
+          </div>
+</div>
+</div>
+<div class="flex items-center justify-between pl-12">
+<p class="font-body-sm text-body-sm text-on-surface line-clamp-1">
+          Te pasé el nuevo hash del diseño comprimido.
+        </p>
+<span class="font-label-technical text-label-technical text-vivid-teal shrink-0 ml-2">LEÍDO · CERO LOGS</span>
+</div>
+</div>
+<!-- Chat Item 3: Cipher Lab -->
+<div class="p-3 rounded-xl bg-surface-elevation-1 hover:bg-surface-elevation-2 transition-all space-y-2 shadow-sm">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-2.5 min-w-0">
+<div class="w-10 h-10 rounded-full bg-surface-container-high flex items-center justify-center text-neon-violet shrink-0">
+<span class="material-symbols-outlined text-[20px]">enhanced_encryption</span>
+</div>
+<div class="min-w-0">
+<div class="flex items-center gap-1.5">
+<span class="font-headline-sm text-headline-sm text-text-primary truncate">Cipher Lab</span>
+<span class="px-1.5 py-0.2 rounded bg-neon-violet/15 text-neon-violet font-label-technical text-label-technical">OFUSCADO</span>
+</div>
+<span class="font-label-sm text-label-sm text-text-muted truncate">@cipher_lab · Canal Ofuscado</span>
+</div>
+</div>
+<div class="flex items-center gap-1 px-2 py-0.5 rounded bg-surface-container text-amber-warning font-label-technical text-label-technical shrink-0">
+<span class="material-symbols-outlined text-[12px]">visibility_off</span>
+          1 SOLO VISTAZO
+        </div>
+</div>
+<div class="flex items-center gap-2 pl-12 text-neon-violet">
+<span class="material-symbols-outlined text-[16px]">lock_clock</span>
+<p class="font-body-sm text-body-sm italic text-on-surface truncate">
+          🔒 Mensaje autodestructible tras lectura activa.
+        </p>
+</div>
+</div>
+<!-- Chat Item 4: Dev Minimal -->
+<div class="p-3 rounded-xl bg-surface-elevation-1 hover:bg-surface-elevation-2 transition-all space-y-2 shadow-sm">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-2.5 min-w-0">
+<div class="w-10 h-10 rounded-full bg-surface-container-high flex items-center justify-center font-headline-sm text-headline-sm text-text-muted shrink-0">
+            D
+          </div>
+<div class="min-w-0">
+<div class="flex items-center gap-1.5">
+<span class="font-headline-sm text-headline-sm text-text-primary truncate">Dev Minimal</span>
+<span class="material-symbols-outlined text-cyber-cyan text-[16px]">security</span>
+</div>
+<span class="font-label-sm text-label-sm text-text-muted truncate">@dev_minimal · Verificado P2P</span>
+</div>
+</div>
+<span class="font-label-sm text-label-sm text-text-muted shrink-0">14:20</span>
+</div>
+<p class="font-body-sm text-body-sm text-text-muted line-clamp-1 pl-12">
+        Auditamos los 3 nuevos peers de la red mesh local...
+      </p>
+</div>
+</div>
+<!-- Security Quick Toggles Section -->
+<div class="p-4 rounded-xl bg-surface-elevation-1 space-y-4 shadow-sm">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-neon-violet text-[20px]">shield</span>
+<h3 class="font-headline-sm text-headline-sm text-text-primary">Parámetros de Seguridad Fuerte</h3>
+</div>
+<span class="font-label-technical text-label-technical text-cyber-cyan uppercase">MIL-SPEC</span>
+</div>
+<!-- Toggle: Modo Incógnito Extremo -->
+<div class="flex items-center justify-between gap-3 p-3 rounded-lg bg-surface-container-low">
+<div class="min-w-0">
+<span class="font-headline-sm text-headline-sm text-text-primary block">Modo Incógnito Extremo</span>
+<p class="font-body-sm text-body-sm text-text-muted mt-0.5">
+          Bloqueo total de capturas de pantalla y ofuscación de ventana en segundo plano.
+        </p>
+</div>
+<button class="relative inline-flex h-6 w-11 shrink-0 cursor-pointer rounded-full transition-colors duration-200 bg-gradient-to-r from-neon-violet to-cyber-cyan p-0.5" id="incognitoToggle">
+<span class="translate-x-5 pointer-events-none inline-block h-5 w-5 transform rounded-full bg-text-primary shadow transition duration-200 ease-in-out"></span>
+</button>
+</div>
+<!-- Selector: Temporizador Global de Autodestrucción -->
+<div class="space-y-2 p-3 rounded-lg bg-surface-container-low">
+<div class="flex items-center justify-between">
+<span class="font-headline-sm text-headline-sm text-text-primary">Temporizador Global de Autodestrucción</span>
+<span class="font-label-technical text-label-technical text-amber-warning">ACTIVO: 5 MIN</span>
+</div>
+<div class="grid grid-cols-4 gap-1.5 pt-1">
+<button class="py-1.5 rounded bg-surface-elevation-1 text-text-muted font-label-md text-label-md hover:text-text-primary text-center">10 s</button>
+<button class="py-1.5 rounded bg-neon-violet text-text-primary font-label-md text-label-md shadow-md text-center">5 min</button>
+<button class="py-1.5 rounded bg-surface-elevation-1 text-text-muted font-label-md text-label-md hover:text-text-primary text-center">1 h</button>
+<button class="py-1.5 rounded bg-surface-elevation-1 text-text-muted font-label-md text-label-md hover:text-text-primary text-center">24 h</button>
+</div>
+</div>
+<!-- Duress PIN Feature -->
+<div class="flex items-center justify-between gap-3 p-3 rounded-lg bg-surface-container-low">
+<div class="min-w-0">
+<div class="flex items-center gap-1.5">
+<span class="material-symbols-outlined text-energetic-coral text-[18px]">emergency</span>
+<span class="font-headline-sm text-headline-sm text-text-primary">Clave de Coacción (Duress PIN)</span>
+</div>
+<p class="font-body-sm text-body-sm text-text-muted mt-0.5">
+          Protección ante coacción física: ingresa un PIN alterno que abre una bóveda señuelo vacía.
+        </p>
+</div>
+<button class="px-3 py-1.5 rounded bg-surface-elevation-1 text-cyber-cyan font-label-md text-label-md hover:bg-surface-container-high transition-colors shrink-0">
+        Configurar
+      </button>
+</div>
+</div>
+<!-- Primary CTA Button -->
+<div class="pt-2">
+<button class="w-full py-3.5 px-4 rounded-full bg-gradient-to-r from-neon-violet via-electric-purple to-cyber-cyan text-text-primary font-headline-sm text-headline-sm shadow-xl flex items-center justify-center gap-2 active:scale-95 transition-all">
+<span class="material-symbols-outlined text-[20px]">add_circle</span>
+<span>Nuevo Chat Cifrado Directo</span>
+</button>
+</div>
+<!-- Security Footer Watermark -->
+<div class="text-center pt-2 pb-4 space-y-1">
+<div class="flex items-center justify-center gap-1.5 text-text-muted">
+<span class="material-symbols-outlined text-[13px] text-cyber-cyan">verified</span>
+<span class="font-label-technical text-label-technical tracking-wider text-text-muted">
+        CIFRADO DE EXTREMO A EXTREMO · NO-METADATOS · DEMO V4.1.2
+      </span>
+</div>
+<p class="font-label-sm text-label-sm text-text-muted">
+      La memoria volátil se sobrescribe periódicamente con bytes aleatorios.
+    </p>
+</div>
+</div>
+<script>
+  // Simple micro-interaction for Incognito Switch toggle
+  const incognitoBtn = document.getElementById('incognitoToggle');
+  if (incognitoBtn) {
+    let isActive = true;
+    incognitoBtn.addEventListener('click', () => {
+      isActive = !isActive;
+      const thumb = incognitoBtn.querySelector('span');
+      if (isActive) {
+        incognitoBtn.className = "relative inline-flex h-6 w-11 shrink-0 cursor-pointer rounded-full transition-colors duration-200 bg-gradient-to-r from-neon-violet to-cyber-cyan p-0.5";
+        thumb.className = "translate-x-5 pointer-events-none inline-block h-5 w-5 transform rounded-full bg-text-primary shadow transition duration-200 ease-in-out";
+      } else {
+        incognitoBtn.className = "relative inline-flex h-6 w-11 shrink-0 cursor-pointer rounded-full transition-colors duration-200 bg-surface-container-high p-0.5";
+        thumb.className = "translate-x-0 pointer-events-none inline-block h-5 w-5 transform rounded-full bg-text-muted shadow transition duration-200 ease-in-out";
+      }
+    });
+  }
+</script></main><script>
+(function(){
+  var R={inicio:'/',explorar:'/explorar',grupos:'/grupos',notificaciones:'/notificaciones',perfil:'/perfil'};
+  document.querySelectorAll('[data-path]').forEach(function(a){var p=R[a.getAttribute('data-path')];if(p&&a.tagName==='A')a.setAttribute('href',p);});
+  var ICON={settings:'/ajustes',chat:'/mensajes',forum:'/mensajes',mail:'/mensajes',send:null,smart_toy:'/asistente',storefront:'/tienda',workspace_premium:'/suscripcion',language:'/idiomas',translate:'/idiomas',shield:'/ciberseguridad',security:'/ciberseguridad',devices:'/sesiones',lock:'/boveda',campaign:'/promocionar',local_fire_department:'/chat-rachi'};
+  document.addEventListener('click',function(e){
+    var el=e.target.closest('a,button');if(!el||el.closest('#demo-menu'))return;
+    var href=el.getAttribute('href');if(href&&href!=='#'&&href.indexOf('javascript')!==0)return;
+    var ic=el.querySelector('.material-symbols-outlined');var name=ic?ic.textContent.trim():'';
+    var txt=(el.textContent||'').trim().toLowerCase();
+    var go=null;
+    if(/^(aceptar|rechazar|aceptar todo|rechazar todo|entendido)$/.test(txt)){var f=el;while(f&&f!==document.body&&getComputedStyle(f).position!=='fixed')f=f.parentElement;if(f&&f!==document.body){e.preventDefault();f.style.display='none';return;}}
+    if(name==='arrow_back'||name==='arrow_back_ios'||name==='close'||name==='chevron_left'){e.preventDefault();if(history.length>1)history.back();else location.href='/';return;}
+    if(/crear cuenta|reg[ií]strate|unirme/.test(txt)&&location.pathname.indexOf('/registro')!==0)go='/registro';
+    else if(/^(entrar|iniciar sesi[oó]n|ya tengo cuenta|continuar|comenzar|empezar|crear mi cuenta|finalizar)/.test(txt)&&/bienvenida|registro/.test(location.pathname))go='/';
+    else if(name==='add'||name==='edit'||name==='add_circle'||/^publicar$/.test(txt))go=location.pathname==='/publicar'?null:'/publicar';
+    else if(ICON[name])go=ICON[name];
+    if(go&&go!==location.pathname){e.preventDefault();location.href=go;}
+  },true);
+  var b=document.createElement('a');b.id='demo-menu';b.href='/pantallas';b.textContent='☰ Pantallas';
+  b.setAttribute('style','position:fixed;left:0;top:45%;z-index:9999;writing-mode:vertical-rl;transform:rotate(180deg);font:600 11px Inter,system-ui,sans-serif;color:#fff;background:rgba(124,58,237,.8);padding:10px 5px;border-radius:0 8px 8px 0;text-decoration:none;box-shadow:0 4px 14px rgba(0,0,0,.4)');
+  document.body.appendChild(b);
+})();
+</script>
+</body></html>
