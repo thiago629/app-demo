@@ -10,7 +10,7 @@ const IMAGENES = {
 };
 
 export function RachiImagen({ modo, size }: { modo: keyof typeof IMAGENES; size: number }) {
-  return <Image source={IMAGENES[modo]} style={{ width: size, height: size * (904 / 864) }} resizeMode="contain" accessibilityIgnoresInvertColors />;
+  return <Image source={IMAGENES[modo]} style={{ width: size, height: size }} resizeMode="contain" accessibilityIgnoresInvertColors />;
 }
 
 // Insignia pequeña para la cabecera: Rachi + días de racha
