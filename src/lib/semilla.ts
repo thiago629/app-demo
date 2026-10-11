@@ -4,6 +4,8 @@ import type { Perfil, Post } from './types';
 import marca from './marca.json';
 
 const h = (horas: number) => new Date(Date.now() - horas * 36e5).toISOString();
+// Día local (AAAA-MM-DD) de hace n días
+const dia = (n: number) => { const d = new Date(); d.setDate(d.getDate() - n); return `${d.getFullYear()}-${String(d.getMonth() + 1).padStart(2, '0')}-${String(d.getDate()).padStart(2, '0')}`; };
 
 const img = {
   atardecer: require('../../assets/demo/atardecer.jpg'),
@@ -136,6 +138,21 @@ export function semilla(): Estado {
       ],
       campeonAnterior: { userId: 'u_dani', tema: 'Los exámenes' },
     },
+    // Días activos: Lucía lleva 11 días seguidos (hoy aún no), Dani tiene la racha congelada
+    diasActivos: {
+      u_lucia: Array.from({ length: 11 }, (_, i) => dia(i + 1)),
+      u_dani: Array.from({ length: 6 }, (_, i) => dia(i + 2)),
+      u_ana: Array.from({ length: 30 }, (_, i) => dia(i)),
+      u_marcos: [dia(0), dia(1), dia(2)],
+    },
+    predicciones: [
+      { id: 'pr1', pregunta: '¿Quién gana el clásico del domingo?', opciones: ['Real Madrid', 'Empate', 'Barça'], cierre: h(-72), creado: h(20),
+        apuestas: [{ userId: 'u_dani', opcion: 2, puntos: 200 }, { userId: 'u_marcos', opcion: 0, puntos: 100 }, { userId: 'u_ana', opcion: 1, puntos: 50 }] },
+      { id: 'pr2', pregunta: '¿Quién gana el próximo Benidorm Fest?', opciones: ['Una solista', 'Un grupo', 'Un solista'], cierre: h(-24 * 9), creado: h(30),
+        apuestas: [{ userId: 'u_sofia', opcion: 0, puntos: 150 }, { userId: 'u_ana', opcion: 1, puntos: 100 }] },
+      { id: 'pr3', pregunta: '¿Lloverá en Madrid el próximo sábado?', opciones: ['Sí', 'No'], cierre: h(30), resultado: 1, creado: h(24 * 8),
+        apuestas: [{ userId: 'u_lucia', opcion: 1, puntos: 100 }, { userId: 'u_dani', opcion: 0, puntos: 150 }, { userId: 'u_sofia', opcion: 1, puntos: 50 }] },
+    ],
     capsulaVotos: [
       { postId: 'p15', userId: 'u_dani', acierto: true }, { postId: 'p15', userId: 'u_lucia', acierto: true }, { postId: 'p15', userId: 'u_ana', acierto: false },
     ],

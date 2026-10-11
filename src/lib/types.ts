@@ -103,3 +103,14 @@ export type Duelo = {
   votos: { userId: string; ganador: string; perdedor: string }[];
   campeonAnterior?: { userId: string; tema: string };
 };
+
+// Predicciones: se apuestan puntos sin valor económico (no se compran ni se canjean)
+export type Prediccion = {
+  id: string;
+  pregunta: string;
+  opciones: string[];
+  cierre: string;
+  resultado?: number;
+  apuestas: { userId: string; opcion: number; puntos: number }[];
+  creado: string;
+};

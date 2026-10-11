@@ -3,6 +3,7 @@ import { Pressable, View } from 'react-native';
 import { router } from 'expo-router';
 import { feedParaTi, feedSiguiendo, useEstado } from '../../src/lib/store';
 import { Cabecera, Icono, Pestañas, Simbolo } from '../../src/components/ui';
+import { InsigniaRacha } from '../../src/components/Rachi';
 import { BotonPublicar, ListaPosts } from '../../src/components/Lista';
 import marca from '../../src/lib/marca.json';
 
@@ -14,7 +15,7 @@ export default function Inicio() {
   return (
     <View style={{ flex: 1 }}>
       <Cabecera titulo={marca.nombre} izquierda={<Simbolo size={28} />}
-        derecha={<Pressable onPress={() => router.push('/ajustes')} accessibilityLabel="Ajustes"><Icono n="ajustes" /></Pressable>} />
+        derecha={<View style={{ flexDirection: 'row', alignItems: 'center', gap: 10 }}><InsigniaRacha /><Pressable onPress={() => router.push('/ajustes')} accessibilityLabel="Ajustes"><Icono n="ajustes" /></Pressable></View>} />
       <Pestañas opciones={[{ v: 'parati', t: 'Para ti' }, { v: 'siguiendo', t: 'Siguiendo' }]} valor={modo} onCambio={setModo} />
       <ListaPosts posts={lista} vacio={modo === 'siguiendo' ? 'Sigue a gente para ver aquí lo que publica, en orden de llegada.' : undefined} />
       <BotonPublicar />

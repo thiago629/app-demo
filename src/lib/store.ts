@@ -4,7 +4,7 @@
 import AsyncStorage from '@react-native-async-storage/async-storage';
 import { useSyncExternalStore } from 'react';
 import type {
-  Debate, Duelo, Consentimiento, DatosPersonales, Denuncia, Grupo, Medio, MotivoDenuncia, Notificacion, Perfil, Post,
+  Debate, Duelo, Prediccion, Consentimiento, DatosPersonales, Denuncia, Grupo, Medio, MotivoDenuncia, Notificacion, Perfil, Post,
 } from './types';
 import { edad, mencionesDe } from './texto';
 import { semilla } from './semilla';
@@ -35,9 +35,11 @@ export type Estado = {
   debates: Debate[];
   duelo: Duelo;
   capsulaVotos: { postId: string; userId: string; acierto: boolean }[];
+  diasActivos: Record<string, string[]>; // AAAA-MM-DD en que cada persona publicó o comentó
+  predicciones: Prediccion[];
 };
 
-const CLAVE = 'demo.app.v3';
+const CLAVE = 'demo.app.v4';
 let estado: Estado = semilla();
 const oyentes = new Set<() => void>();
 
@@ -188,7 +190,8 @@ export function publicar(p: { texto: string; tipo: Post['tipo']; medios: Medio[]
   const yo = estado.sesion; if (!yo) return;
   const post: Post = { id: id(), autor: yo, texto: p.texto.trim(), tipo: p.tipo, medios: p.medios, respuestaA: p.respuestaA, grupoId: p.grupoId, abreEl: p.abreEl, creado: ahora() };
   cambiar((e) => {
-    let n: Estado = { ...e, posts: [post, ...e.posts] };
+    const dias = e.diasActivos[yo] ?? [];
+    let n: Estado = { ...e, posts: [post, ...e.posts], diasActivos: { ...e.diasActivos, [yo]: dias.includes(hoyISO()) ? dias : [...dias, hoyISO()] } };
     for (const u of mencionesDe(post.texto)) {
       const dest = Object.values(e.perfiles).find((x) => x.usuario.toLowerCase() === u);
       if (dest) n = notificar(n, dest.id, { tipo: 'mencion', actor: yo, postId: post.id });
@@ -464,4 +467,77 @@ export function puntosVisionario(e: Estado, userId: string): number {
     const v = e.capsulaVotos.filter((x) => x.postId === p.id);
     return v.length > 0 && v.filter((x) => x.acierto).length > v.length / 2;
   }).length;
+}
+
+// ---------------------------------------------------------------- Racha (con Rachi)
+// Cuenta los días seguidos en que publicas o comentas. Si fallas un día, la racha se congela:
+// tienes hasta el final de hoy para salvarla. Si fallas dos seguidos, se pierde.
+export const hoyISO = (d = new Date()) => `${d.getFullYear()}-${String(d.getMonth() + 1).padStart(2, '0')}-${String(d.getDate()).padStart(2, '0')}`;
+const diaAntes = (iso: string, n = 1) => { const d = new Date(`${iso}T12:00:00`); d.setDate(d.getDate() - n); return hoyISO(d); };
+
+export type EstadoRacha = { dias: number; modo: 'normal' | 'fuego' | 'hielo'; mejor: number; activos: Set<string> };
+
+export function racha(e: Estado, userId: string): EstadoRacha {
+  const activos = new Set(e.diasActivos[userId] ?? []);
+  const hoy = hoyISO();
+  const contarDesde = (inicio: string) => {
+    let n = 0, d = inicio, huecos = 0;
+    while (huecos < 2) {
+      if (activos.has(d)) { n++; huecos = 0; } else if (activos.has(diaAntes(d)) && huecos === 0 && n > 0) { huecos = 1; } else break;
+      d = diaAntes(d);
+    }
+    return n;
+  };
+  let modo: EstadoRacha['modo'] = 'normal', dias = 0;
+  if (activos.has(hoy)) { modo = 'fuego'; dias = contarDesde(hoy); }
+  else if (activos.has(diaAntes(hoy))) { modo = 'normal'; dias = contarDesde(diaAntes(hoy)); }
+  else if (activos.has(diaAntes(hoy, 2))) { modo = 'hielo'; dias = contarDesde(diaAntes(hoy, 2)); }
+  // Mejor racha histórica (días consecutivos, sin contar congelaciones)
+  let mejor = 0, act = 0, prev = '';
+  for (const d of [...activos].sort()) { act = prev && diaAntes(d) === prev ? act + 1 : 1; mejor = Math.max(mejor, act); prev = d; }
+  return { dias, modo, mejor: Math.max(mejor, dias), activos };
+}
+
+// ---------------------------------------------------------------- Predicciones con puntos
+export const PUNTOS_INICIALES = 1000;
+export const prediccionAbierta = (p: Prediccion) => p.resultado === undefined && Date.parse(p.cierre) > Date.now();
+
+export function puntos(e: Estado, userId: string): number {
+  let total = PUNTOS_INICIALES;
+  for (const p of e.predicciones) {
+    const mias = p.apuestas.filter((a) => a.userId === userId);
+    if (!mias.length) continue;
+    const apostado = mias.reduce((s, a) => s + a.puntos, 0);
+    if (p.resultado === undefined) { total -= apostado; continue; }
+    const bote = p.apuestas.reduce((s, a) => s + a.puntos, 0);
+    const alGanador = p.apuestas.filter((a) => a.opcion === p.resultado).reduce((s, a) => s + a.puntos, 0);
+    const mio = mias.filter((a) => a.opcion === p.resultado).reduce((s, a) => s + a.puntos, 0);
+    total += (alGanador ? Math.round((mio / alGanador) * bote) : 0) - apostado;
+  }
+  return total;
+}
+
+export function apostar(predId: string, opcion: number, cantidad: number): string | null {
+  const yo = estado.sesion; if (!yo) return 'Entra en tu cuenta.';
+  const p = estado.predicciones.find((x) => x.id === predId);
+  if (!p || !prediccionAbierta(p)) return 'Esta predicción ya está cerrada.';
+  if (p.apuestas.some((a) => a.userId === yo)) return 'Ya has apostado en esta predicción.';
+  if (cantidad > puntos(estado, yo)) return 'No tienes puntos suficientes.';
+  cambiar((e) => ({ ...e, predicciones: e.predicciones.map((x) => x.id === predId ? { ...x, apuestas: [...x.apuestas, { userId: yo, opcion, puntos: cantidad }] } : x) }));
+  return null;
+}
+
+export function crearPrediccion(pregunta: string, opciones: string[], dias: number): string | null {
+  const yo = estado.sesion; if (!yo) return null;
+  const ops = opciones.map((o) => o.trim()).filter(Boolean);
+  if (pregunta.trim().length < 5 || ops.length < 2) return null;
+  const p: Prediccion = { id: id(), pregunta: pregunta.trim(), opciones: ops, cierre: new Date(Date.now() + dias * 864e5).toISOString(), apuestas: [], creado: ahora() };
+  cambiar((e) => ({ ...e, predicciones: [p, ...e.predicciones] }));
+  return p.id;
+}
+
+export function rankingPuntos(e: Estado) {
+  return Object.keys(e.perfiles).map((userId) => ({ userId, puntos: puntos(e, userId) }))
+    .filter((r) => r.puntos !== PUNTOS_INICIALES || e.predicciones.some((p) => p.apuestas.some((a) => a.userId === r.userId)))
+    .sort((a, b) => b.puntos - a.puntos);
 }

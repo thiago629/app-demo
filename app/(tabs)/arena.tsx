@@ -4,9 +4,9 @@ import { Pressable, ScrollView, StyleSheet, Text, View } from 'react-native';
 import { router } from 'expo-router';
 import { useTheme } from '../../src/lib/theme';
 import {
-  clasificacionDuelo, estadoDebate, ganadorDebate, rankingRing, siguienteCombate, turnoDe, useEstado, votarDuelo,
+  apostar, clasificacionDuelo, estadoDebate, prediccionAbierta, puntos, rankingPuntos, ganadorDebate, rankingRing, siguienteCombate, turnoDe, useEstado, votarDuelo,
 } from '../../src/lib/store';
-import type { Debate } from '../../src/lib/types';
+import type { Debate, Prediccion } from '../../src/lib/types';
 import { Avatar, Boton, Cabecera, Icono, Pestañas } from '../../src/components/ui';
 import { MedioVista } from '../../src/components/Post';
 
@@ -113,13 +113,86 @@ function DueloMemes() {
   );
 }
 
+function TarjetaPrediccion({ p }: { p: Prediccion }) {
+  const t = useTheme();
+  const yo = useEstado((e) => e.sesion);
+  const [cantidad, setCantidad] = useState(100);
+  const [error, setError] = useState<string | null>(null);
+  const abierta = prediccionAbierta(p);
+  const mia = p.apuestas.find((a) => a.userId === yo);
+  const bote = p.apuestas.reduce((s, a) => s + a.puntos, 0);
+  const por = (i: number) => p.apuestas.filter((a) => a.opcion === i).reduce((s, a) => s + a.puntos, 0);
+  const horas = Math.max(0, Math.round((Date.parse(p.cierre) - Date.now()) / 36e5));
+  return (
+    <View style={{ padding: 16, gap: 10, borderBottomWidth: StyleSheet.hairlineWidth, borderColor: t.line }}>
+      <Text style={{ color: t.muted, fontSize: 12, fontWeight: '700' }}>
+        {p.resultado !== undefined ? 'RESUELTA' : abierta ? `CIERRA EN ${horas < 48 ? `${horas} H` : `${Math.round(horas / 24)} DÍAS`}` : 'CERRADA · ESPERANDO RESULTADO'} · BOTE {bote} PUNTOS
+      </Text>
+      <Text style={{ color: t.text, fontSize: 17, fontWeight: '800' }}>{p.pregunta}</Text>
+      {p.opciones.map((o, i) => {
+        const pct = bote ? Math.round((por(i) / bote) * 100) : 0;
+        const gana = p.resultado === i, elegida = mia?.opcion === i;
+        return (
+          <Pressable key={i} disabled={!abierta || !!mia} onPress={() => setError(apostar(p.id, i, cantidad))}
+            style={{ borderRadius: 12, borderWidth: elegida || gana ? 2 : 1, borderColor: gana ? '#2E9E6A' : elegida ? t.accent : t.line, overflow: 'hidden' }}>
+            <View style={{ position: 'absolute', left: 0, top: 0, bottom: 0, width: `${pct}%`, backgroundColor: t.chip }} />
+            <View style={{ flexDirection: 'row', padding: 12, gap: 8 }}>
+              <Text style={{ color: t.text, flex: 1, fontWeight: elegida || gana ? '800' : '500' }}>{o}{gana ? '  ✓ Resultado' : ''}{elegida ? `  · tu apuesta (${mia!.puntos})` : ''}</Text>
+              <Text style={{ color: t.muted, fontVariant: ['tabular-nums'] }}>{pct} %</Text>
+            </View>
+          </Pressable>
+        );
+      })}
+      {abierta && !mia && (
+        <View style={{ flexDirection: 'row', alignItems: 'center', gap: 8, flexWrap: 'wrap' }}>
+          <Text style={{ color: t.muted }}>Apostar:</Text>
+          {[50, 100, 250].map((c) => (
+            <Pressable key={c} onPress={() => setCantidad(c)} style={{ paddingHorizontal: 12, paddingVertical: 6, borderRadius: 999, backgroundColor: cantidad === c ? t.accent : t.chip }}>
+              <Text style={{ color: cantidad === c ? t.accentText : t.text, fontWeight: '700' }}>{c}</Text>
+            </Pressable>
+          ))}
+          <Text style={{ color: t.muted, fontSize: 12 }}>y toca tu opción</Text>
+        </View>
+      )}
+      {error && <Text style={{ color: t.danger }}>{error}</Text>}
+    </View>
+  );
+}
+
+function Predicciones() {
+  const t = useTheme();
+  const e = useEstado((x) => x);
+  const mios = e.sesion ? puntos(e, e.sesion) : 0;
+  const ranking = rankingPuntos(e);
+  const lista = [...e.predicciones].sort((a, b) => Number(prediccionAbierta(b)) - Number(prediccionAbierta(a)));
+  return (
+    <ScrollView contentContainerStyle={{ paddingBottom: 120 }}>
+      <View style={{ padding: 16, gap: 10 }}>
+        <Text style={{ color: t.text, fontSize: 28, fontWeight: '900' }}>{mios} <Text style={{ fontSize: 16, color: t.muted, fontWeight: '600' }}>puntos</Text></Text>
+        <Text style={{ color: t.muted }}>Apuesta tus puntos a lo que crees que va a pasar. Si aciertas, te repartes el bote con quienes acertaron.</Text>
+        <Boton titulo="Crear una predicción" tipo="secundario" onPress={() => router.push('/prediccion/nueva')} />
+        <Text style={{ color: t.muted, fontSize: 12 }}>Los puntos no tienen valor económico: no se compran, no se venden y no se canjean por nada.</Text>
+      </View>
+      {ranking.length > 0 && (
+        <View style={{ marginHorizontal: 16, padding: 14, borderRadius: 16, backgroundColor: t.chip, gap: 6 }}>
+          <Text style={{ color: t.muted, fontWeight: '800', fontSize: 12, letterSpacing: 0.5 }}>LOS QUE MÁS ACIERTAN</Text>
+          {ranking.slice(0, 5).map((r, i) => (
+            <Text key={r.userId} style={{ color: t.text }}>{i + 1}. @{e.perfiles[r.userId]?.usuario} · {r.puntos} puntos</Text>
+          ))}
+        </View>
+      )}
+      {lista.map((p) => <TarjetaPrediccion key={p.id} p={p} />)}
+    </ScrollView>
+  );
+}
+
 export default function Arena() {
-  const [vista, setVista] = useState<'ring' | 'duelo'>('ring');
+  const [vista, setVista] = useState<'ring' | 'duelo' | 'pred'>('ring');
   return (
     <View style={{ flex: 1 }}>
       <Cabecera titulo="Arena" izquierda={<Icono n="trofeo" />} />
-      <Pestañas opciones={[{ v: 'ring', t: 'El Ring' }, { v: 'duelo', t: 'Duelo de memes' }]} valor={vista} onCambio={setVista} />
-      {vista === 'ring' ? <Ring /> : <DueloMemes />}
+      <Pestañas opciones={[{ v: 'ring', t: 'El Ring' }, { v: 'duelo', t: 'Duelo memes' }, { v: 'pred', t: 'Predicciones' }]} valor={vista} onCambio={setVista} />
+      {vista === 'ring' ? <Ring /> : vista === 'duelo' ? <DueloMemes /> : <Predicciones />}
     </View>
   );
 }
