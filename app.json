@@ -1,0 +1,51 @@
+{
+  "expo": {
+    "name": "Lunaure",
+    "slug": "lunaure",
+    "scheme": "lunaure",
+    "version": "0.1.0",
+    "orientation": "portrait",
+    "icon": "./assets/icon.png",
+    "userInterfaceStyle": "dark",
+    "splash": {
+      "backgroundColor": "#0A0908",
+      "image": "./assets/splash-icon.png",
+      "resizeMode": "contain"
+    },
+    "ios": {
+      "supportsTablet": true,
+      "bundleIdentifier": "com.lunaure.app",
+      "infoPlist": {
+        "NSPhotoLibraryUsageDescription": "Lunaure necesita acceso a tus fotos para que puedas publicarlas.",
+        "NSCameraUsageDescription": "Lunaure usa la cámara para que hagas fotos y vídeos y los publiques.",
+        "NSMicrophoneUsageDescription": "Lunaure usa el micrófono para grabar el sonido de tus vídeos."
+      }
+    },
+    "android": {
+      "package": "com.lunaure.app",
+      "adaptiveIcon": {
+        "backgroundColor": "#0A0908",
+        "foregroundImage": "./assets/android-icon-foreground.png"
+      }
+    },
+    "web": {
+      "favicon": "./assets/favicon.png",
+      "output": "single",
+      "bundler": "metro"
+    },
+    "plugins": [
+      "expo-router",
+      "expo-video",
+      "expo-font",
+      [
+        "expo-image-picker",
+        {
+          "photosPermission": "Lunaure necesita acceso a tus fotos para que puedas publicarlas."
+        }
+      ]
+    ],
+    "experiments": {
+      "typedRoutes": false
+    }
+  }
+}
